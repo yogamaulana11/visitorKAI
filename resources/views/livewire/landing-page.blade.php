@@ -27,9 +27,7 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
+              
             </ul>
             {{-- button login login redirect with icon --}}
             <a href="" class="btn btn-primary" style="background-color: #F5A623; border-color: #F5A623">
