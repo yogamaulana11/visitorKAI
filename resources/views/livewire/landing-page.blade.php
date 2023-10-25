@@ -31,9 +31,12 @@
                 <a class="nav-link disabled">Disabled</a>
               </li>
             </ul>
-            {{-- button login --}}
-            <form class="d-flex">
-              <button class="btn text-light me-5" style="background-color: #ED6B23" type="submit">Login</button>
+            {{-- button login login redirect with icon --}}
+            <a href="" class="btn btn-primary" style="background-color: #F5A623; border-color: #F5A623">
+                <i class="bi bi-person-fill"></i>
+                Login
+            </a>
+            
           </div>
         </div>
       </nav>
