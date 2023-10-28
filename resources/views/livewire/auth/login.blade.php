@@ -1,17 +1,17 @@
-<div>
-    {{-- Nothing in the world is as soft and yielding as water. --}}
-    <div class="container-fluid py-3">
-            <div class="mb-3">
-            <label for="" class="form-label">Email</label>
-            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com">
-            <small id="emailHelpId" class="form-text text-muted">Help text</small>
-            </div>
-
-            <div class="mb-3">
-            <label for="" class="form-label">Password</label>
-            <input type="password" class="form-control" name="" id="" placeholder="">
-            </div>
-
-            </div>
-    
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
