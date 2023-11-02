@@ -11,31 +11,32 @@
                 </a>
                 </div>
         </div>
-          </nav>
+      </nav>
+          <div class="container py-5">
           <div class="container mt-5">
-                <div class="mx-auto" style="width: 500px; height: 500px;">
-                <form>
-                        <div class="mb-3">
-                        <h1 style="text-align:center;">Lupa Kata Sandi</h1>
-                          <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap Anda">
-                        </div>
-                        <div class="mb-3">
+              <div class="mx-auto" style="width: 500px; height: 500px;">
+              <div class="container mx-3 border border-2 rounded-3 shadow-lg">
+              <form>
+                      <div class="mb-2">
+                        <h4 class="text-center mt-3">Lupa Kata Sandi</h4>
                           <label for="exampleInputPassword1" class="form-label">Email</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="admin@admin.com">
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">kata Sandi</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukan Kata Sandi Anda">
-                        </div>
-                        <div class="mb-3 form-check">
-                        </div>
-                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Daftar</button>
-                      </form>
-                      <p class="text-center">
-                      <p class="text-center">Sudah punya akun? <a href="" class="text-center">Masuk</a></p> 
-                            </p>
-                </div>
-            </div>
-            </div>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan email Anda">
+                      </div>
+                      <div 
+                        class="mt-3 form-check">
+                      </div>
+                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Reset Kata Sandi</button>
+              </form>
+              <p class="text-center">
+                <i class="bi bi-arrow-left-square"></i>
+                <a href ="" class="text-decoration-none text-dark">Kembali Untuk Masuk</a>
+                </p>
+              </div>
+          </div>
+  <footer>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Visitor KAI:
+      <a class="text-reset text-decoration-none" href="#">PT.Kereta Api Indonesia (Persero) Divre III Palembang</a>
     </div>
+  </footer>
+</div>
