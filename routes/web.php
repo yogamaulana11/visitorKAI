@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Admin\Lupapassword2;
+
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
@@ -22,4 +22,4 @@ Route::get('/', LandingPage::class);
 
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-route::get('admin/lupapassword2', Lupapassword2::class)->name('lupapassword2');
+
