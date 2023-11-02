@@ -5,10 +5,10 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
               </a>
               <div class="me-4">
-                <a href="/login" class="btn text-dark rounded-pill fw-semibold">
+                <a href="/login" class="btn text-dark rounded-pill fw-semibold" style="background-color: #ED6B23">
                     Home
                 </a>
-                <a href="/register" class="btn text-dark rounded-pill fw-semibold">
+                <a href="/register" class="btn text-dark rounded-pill fw-semibold" style="background-color: #2D2A70">
                 Contact
                 </a>
             </div>
