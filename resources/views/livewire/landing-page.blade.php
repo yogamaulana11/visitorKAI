@@ -8,10 +8,10 @@
             {{-- button login login redirect with icon --}}
             
             <div class="me-4">
-                <a href="/login" class="btn text-dark rounded-pill fw-semibold">
+                <a href="#home" class="btn text-white rounded-pill fw-semibold" style="background-color: #ED6B23">
                     Home
                 </a>
-                <a href="/register" class="btn text-dark rounded-pill fw-semibold">
+                <a href="#contact" class="btn text-white rounded-pill fw-semibold" style="background-color: #2D2A70">
                 Contact
                 </a>
             </div>
@@ -20,7 +20,7 @@
       <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-md-6">
-                <h1 class="fw-bold mt-6">Selamat Datang Pengunjung  </h1>
+                <h1 class="fw-bold mt-6" id="home">Selamat Datang Pengunjung  </h1>
                 <h2 class="mt-3">PT. Kereta Api Indonesia (persero) </h2>
                 <h2 class="mt-3">DIVRE III Palembang </h2>
                 <p class="fs-5">Jika anda mempunyai keperluan <br>Silahkan lakukan pengisian data</p>
@@ -98,7 +98,7 @@
 
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Hubungi Kami</h5>
+        <h5 class="text-uppercase" id="contact">Hubungi Kami</h5>
 
         <ul class="list-unstyled mb-0">
           <li>
