@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Livewire\Admin\AdminLogin;
 use App\Livewire\Index;
 use App\Livewire\LandingPage;
@@ -23,4 +24,6 @@ Route::get('/', LandingPage::class);
 
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-Route::get('admin', AdminLogin::class)->name('admin');
+Route::get('admin/lupapassword', LupaPassword::class)->name('lupapassword');
+Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+
