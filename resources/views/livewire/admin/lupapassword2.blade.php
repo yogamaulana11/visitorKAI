@@ -17,15 +17,17 @@
               <div class="mx-auto" style="width: 500px; height: 500px;">
               <div class="container mx-3 border border-2 rounded-3 shadow-lg">
               <form>
-                      <div class="mb-2">
-                        <h4 class="text-center mt-3">Lupa Kata Sandi</h4>
-                          <label for="exampleInputPassword1" class="form-label">Email</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan email Anda">
+                      <div class="mb-5">
+                        <h4 class="text-center mt-3">Atur Ulang Kata Sandi</h4>
+                          <label for="exampleInputPassword1" class="form-label">Kata Sandi Baru</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kata Sandi Baru Anda">
+                          <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kata Sandi Anda">
                       </div>
                       <div 
-                        class="mt-3 form-check">
+                        class="mt-5 form-check">
                       </div>
-                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Reset Kata Sandi</button>
+                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Selesai</button>
               </form>
               <p class="text-center">
                 <i class="bi bi-arrow-left-square"></i>
@@ -33,10 +35,5 @@
                 </p>
               </div>
           </div>
-  <footer>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2023 Visitor KAI:
-      <a class="text-reset text-decoration-none" href="#">PT.Kereta Api Indonesia (Persero) Divre III Palembang</a>
-    </div>
-  </footer>
 </div>
+          </div>
