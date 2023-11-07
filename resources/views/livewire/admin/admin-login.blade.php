@@ -25,6 +25,11 @@
         <div class="row mt-5">
             <div class="col-md-6">
                 <img src="{{ asset('assets/img/kereta.jpg')}}" alt="" class="img-fluid" height="200" width="450">
+                <div> 
+                <h3 class="text-center">PT.Kereta Api Indonesia</h3>
+                <h3 class="text-center">(PERSERO)</h3>
+                <h3 class="text-center">DIVRE III PALEMBANG</h3>
+                </div>
             </div>
             <div class="col-md-6">
                 <h1 class="text-center" >Selamat Datang</h1>
@@ -32,7 +37,7 @@
                 <form>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">NPP</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Username Anda">
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan NPP Anda">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
