@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Livewire\Admin\AdminDashboard;
 use App\Livewire\Admin\AdminLogin;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\Registrasi;
@@ -27,5 +27,5 @@ Route::get('/', LandingPage::class);
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
 Route::get('admin/lupapassword',LupaPassword::class )->name('LupaPassword');
-route::get('admin/registrasi', Registrasi::class)->name('registrasi');
-
+Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
