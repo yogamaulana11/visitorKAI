@@ -6,6 +6,7 @@
         }
     </style>
 </head>
+<body>
 <div>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -49,3 +50,4 @@
         </div>
     </div>
 </div>
+</body>
