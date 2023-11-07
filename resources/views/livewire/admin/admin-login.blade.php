@@ -1,3 +1,11 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
 <div>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -8,10 +16,8 @@
                 <a href="/login" class="btn text-dark rounded-pill fw-semibold">
                     Home
                 </a>
-                <a href="/register" class="btn text-dark rounded-pill fw-semibold">
-                Contact
-                </a>
-            </div>
+                <a href="/register" class="btn text-dark rounded-pill fw-semibold">Contact</a>
+              </div>
         </div>
       </nav>
       <div class="container mt-5">
@@ -24,21 +30,22 @@
                 <p class="text-center">Silahkan Login akun Anda</p>
                 <form>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nama Pengguna</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Username Anda">
+                      <label for="exampleInputEmail1" class="form-label">NPP</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Username Anda">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Kata Sandi">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password Anda">
                     </div>
                     <div class="mb-3 form-check">
                       
                       <p class="text-end">
-                        <a href="" class="text-decoration-none">Lupa Kata sandi</a>
+                        <a href="lupapassword" class="text-decoration-none">Lupa Kata sandi</a>
                         </p>
                     </div>
                     <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>
                   </form>
+            </div>
         </div>
-        </div>
+    </div>
 </div>
