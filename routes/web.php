@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\AdminDashboard;
+use App\Livewire\Admin\Lupapassword2;
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
