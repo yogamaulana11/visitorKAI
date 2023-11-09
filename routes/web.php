@@ -23,4 +23,5 @@ Route::get('/', LandingPage::class);
 
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
+Route::get('admin/lupassword2', Lupapassword2::class)->name('lupassword2');
 Route::get('admin/dashboard', AdminDashboard::class)->name('admindashboard');
