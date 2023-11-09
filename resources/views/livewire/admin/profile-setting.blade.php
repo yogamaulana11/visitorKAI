@@ -29,7 +29,7 @@
 
       <div class="container py-2">
       <div class="container mt-3">  
-      <div class="container mx-auto border border-2 shadow-lg rounded-2" style="width: 750px">
+      <div class="container mx-auto border border-2 shadow-lg rounded-2" style="">
         <h3 class="container fw-bold mt-3 mb-3">Edit Profil
             <div class="border"></div>
         </h3>
@@ -38,9 +38,9 @@
                 <div class="container">
                 <div class="mb-3 row">
                     <div class="col-2">
-                        <img src="{{ asset ('assets/img/avatar.png') }}" alt="avatar.png" style="height: 100px" >
+                        <img src="{{ asset ('assets/img/avatar.png') }}" class="img-fluid img-thumbnail" alt="avatar.png" style="" >
                     </div>
-                    <div class="col">
+                    <div class="col mb-2 mt-4">
                         <label for="formFile" class="form-label">Upload Foto</label>
                         <input class="form-control" type="file" id="formFile">   
                     </div>
