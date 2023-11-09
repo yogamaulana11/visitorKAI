@@ -6,7 +6,6 @@ use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
-use App\Livewire\Admin\AdminDashboard;
 
 /*
 |--------------------------------------------------------------------------
