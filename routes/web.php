@@ -20,10 +20,7 @@ use App\Livewire\Auth\Register;
 */
 
 
-Route::get('/', LandingPage::class);
-
+Route::get('/', LandingPage::class)->name('landingpage');
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-Route::get('admin/lupapassword', LupaPassword::class)->name('lupapassword');
-Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 
