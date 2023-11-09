@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\AdminDashboard;
 use App\Livewire\Admin\Lupapassword2;
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +24,5 @@ Route::get('/', LandingPage::class);
 
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-Route::get('admin/lupapassword2', Lupapassword2::class)->name('lupapassword2');
-Route::get('admin/dashboard', AdminDashboard::class)->name('dashboard');
+Route::get('admin/lupassword2', Lupapassword2::class)->name('lupassword2');
+Route::get('admin/dashboard', AdminDashboard::class)->name('admindashboard');
