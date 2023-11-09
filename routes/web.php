@@ -22,4 +22,4 @@ Route::get('/', LandingPage::class);
 
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-Route::get('admin/lupapassword2', Lupapassword2::class)->name('lupapassword');
+Route::get('admin/lupapassword2', Lupapassword2::class)->name('lupapassword2');

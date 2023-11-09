@@ -1,3 +1,17 @@
+<head>
+  <!-- Sertakan Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Sertakan Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #footer {
+    position: fixed;
+    bottom: -3%;
+    width: 100%;
+}
+  </style>
+</head>
 <div>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -5,35 +19,53 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
             </a>
             <div class="me-4">
-                <a href="/login" class="btn text-light rounded-pill fw-semibold" style="background-color: #ED6B23; border-color: #ED6B23">Masuk
-                </a>
-                <a href="/register" class="btn text-light rounded-pill fw-semibold" style="background-color: #2D2A70; border-color: #2D2A70">Registrasi
-                </a>
-                </div>
+                <a href="" class="btn text-dark rounded-pill fw-semibold">Masuk</a>
+            </div>
         </div>
       </nav>
-          <div class="container py-5">
           <div class="container mt-5">
-              <div class="mx-auto" style="width: 500px; height: 500px;">
-              <div class="container mx-3 border border-2 rounded-3 shadow-lg">
+          <div class="row justify-content-md-center">
+              <div class="col-md-6 centergrid">
+              <div class="container border border-2 rounded-3 shadow-lg">
               <form>
-                      <div class="mb-5">
-                        <h4 class="text-center mt-3">Atur Ulang Kata Sandi</h4>
+                      <div class="mb-1">
+                        <h4 class="text-center mb-4 mt-3">Atur Ulang Kata Sandi</h4>
                           <label for="exampleInputPassword1" class="form-label">Kata Sandi Baru</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kata Sandi Baru Anda">
+                          <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Masukkan Kata Sandi Baru Anda">
                           <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
                           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kata Sandi Anda">
                       </div>
                       <div 
-                        class="mt-5 form-check">
+                        class="mt-1 form-check">
                       </div>
-                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Selesai</button>
+                      <div class="d-flex justify-content-end mb-3 mt-0">
+                      <button type="button" class="btn text-light rounded-pill" style="background-color: #ED6B23; margin-bottom: 5px;" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Selesai</button>
+                      </div>
+                      <p class="text-center">
+                        <i class="bi bi-arrow-left-square"></i>
+                        <a href ="" class="text-decoration-none text-dark">Kembali Untuk Masuk</a>
+                      </p>
+                </div>
+                </div>
               </form>
-              <p class="text-center">
-                <i class="bi bi-arrow-left-square"></i>
-                <a href ="" class="text-decoration-none text-dark">Kembali Untuk Masuk</a>
-                </p>
-              </div>
           </div>
+          </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Berhasil</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              Kata Sandi Anda Berhasil di ubah.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Selesai</button>
+          </div>
+      </div>
+  </div>
 </div>
-          </div>
+</div>
