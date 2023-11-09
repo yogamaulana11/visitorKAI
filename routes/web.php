@@ -5,6 +5,7 @@ use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\Admin\AdminDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/', LandingPage::class);
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
 Route::get('admin/lupapassword2', Lupapassword2::class)->name('lupapassword2');
+Route::get('admin/dashboard', AdminDashboard::class)->name('dashboard');

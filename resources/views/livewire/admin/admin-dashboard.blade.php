@@ -11,7 +11,7 @@
     
     <div>
         {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand ms-4" href="/">
                     <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
@@ -89,8 +89,51 @@
                     <hr>
                 </div>
             </div>
-            <div class="col py-3">
-                Content area...
+            <div class="container pt-5">
+                <h4 class="text-center pt-5">Dashboard Statistik Pengunjung</h4>
+                <div class="row justify-content-evenly px-5">
+                    <div class="col-md-4">
+                        Pengunjung Hari Ini
+                        <div class="container border rounded-3">
+                            <div class="col-12">
+                                <div class="text-center fs-5 pt-3">Total Pengunjung</div>
+                                <div class="text-center fs-5 pt-3">5</div>
+                                <div class="text-center fs-5 pt-3">Total Keseluruhan Pengunjung</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        Pengunjung Kemarin
+                        <div class="container border rounded-3">
+                            <div class="col-12">
+                                <div class="text-center fs-5 pt-3">Total Pengunjung</div>
+                                <div class="text-center fs-5 pt-3">5</div>
+                                <div class="text-center fs-5 pt-3">Total Keseluruhan Pengunjung</div>
+                            </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+                <div class="row justify-content-evenly px-1">
+                    <div class="col-md-4">
+                        Pengunjung Hari Ini
+                        <div class="container border rounded-3">
+                            <div class="col-12">
+                                <div class="text-center fs-5 pt-3">Total Pengunjung</div>
+                                <div class="text-center fs-5 pt-3">5</div>
+                                <div class="text-center fs-5 pt-3">Total Keseluruhan Pengunjung</div>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-md-4">
+            <div class="row justify-content-evenly px-1">
+                        Pengunjung Kemarin
+                        <div class="container border rounded-3">
+                            <div class="col-12">
+                                <div class="text-center fs-5 pt-3">Total Pengunjung</div>
+                                <div class="text-center fs-5 pt-3">5</div>
+                                <div class="text-center fs-5 pt-3">Total Keseluruhan Pengunjung</div>
+                            </div>
+                </div>
             </div>
         </div>
     </div>
