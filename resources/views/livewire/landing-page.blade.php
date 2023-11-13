@@ -1,3 +1,14 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul Halaman Anda</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
 <div>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
@@ -87,14 +98,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Kirim</button>
+        <button type="button" class="btn btn-primary" style="background-color: #ED6B23" >Kirim</button>
       </div>
     </div>
   </div>
 </div>
 <footer class="black text-center text-lg-start">
   <!-- Grid container -->
-  <div class="container p-4">
+<div class="container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -124,12 +135,4 @@
         <p class="px-4">(0711) 515555</p>
       </div>
     </div>
-    <!--Grid row-->
-  </div>
-  
-</footer>
-
-
-
-
-
+</div>
