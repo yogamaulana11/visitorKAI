@@ -1,9 +1,12 @@
 <?php
 
-use App\Livewire\LandingPage;
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
+use App\Livewire\LandingPage;
 use App\Livewire\Auth\Register;
+use App\Livewire\Admin\AdminLogin;
+use App\Livewire\Admin\Registrasi;
+use App\Livewire\Admin\LupaPassword;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
