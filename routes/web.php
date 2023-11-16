@@ -27,5 +27,8 @@ Route::get('/', LandingPage::class);
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
 Route::get('admin/lupapassword',LupaPassword::class )->name('LupaPassword');
-route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/login', AdminLogin::class)->name('adminlogin');
+
+
 
