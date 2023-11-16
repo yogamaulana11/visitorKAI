@@ -1,12 +1,3 @@
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body>
 <div>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -34,25 +25,29 @@
             <div class="col-md-6">
                 <h1 class="text-center" >Selamat Datang</h1>
                 <p class="text-center">Silahkan Login akun Anda</p>
-                <form>
+                <form wire:submit.prevent="forLogin">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">NPP</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan NPP Anda">
+                      <label class="form-label">NPP</label>
+                      <input wire:model="npp" type="text" class="form-control" placeholder="Masukkan NPP Anda">
+                      @error('npp')
+                          <span class="text-danger">{{ $message }}</span>
+                      @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password Anda">
+                      <label class="form-label">Password</label>
+                      <input wire:model="password" type="password" class="form-control" placeholder="Masukkan Password Anda">
+                      @error('password')
+                          <span class="text-danger">{{ $message }}</span>
+                      @enderror
                     </div>
                     <div class="mb-3 form-check">
-                      
                       <p class="text-end">
                         <a href="lupapassword" class="text-decoration-none">Lupa Kata sandi</a>
                         </p>
                     </div>
-                    <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>
+                    <button class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>
                   </form>
             </div>
         </div>
     </div>
 </div>
-</body>
