@@ -1,6 +1,5 @@
 <?php
 
-\
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
