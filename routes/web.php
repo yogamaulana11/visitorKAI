@@ -17,8 +17,7 @@ use App\Livewire\Auth\Register;
 */
 
 
-Route::get('/', LandingPage::class);
-
+Route::get('/',LandingPage::class)->name( LandingPage::class);
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');

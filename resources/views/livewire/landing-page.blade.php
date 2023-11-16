@@ -1,38 +1,69 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul Halaman Anda</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
     <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="/">
-                <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
-              </a>
-            {{-- button login login redirect with icon --}}
-            
+      <div class="container-fluid">
+          <a class="navbar-brand ms-4" href="/">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
+          </a>
             <div class="me-4">
-                <a href="#home" class="btn text-white rounded-pill fw-semibold" style="background-color: #ED6B23">
-                    Home
-                </a>
-                <a href="#contact" class="btn text-white rounded-pill fw-semibold" style="background-color: #2D2A70">
-                Contact
-                </a>
+              <a href="#beranda"class="btn fw-semibold text-dark rounded-pill">Beranda</a>
+              <a href="#tentang"class="btn fw-semibold text-dark rounded-pill">Tentang</a>
+              <a href="#kontak"class="btn fw-semibold text-dark rounded-pill">Kontak</a>
             </div>
-        </div>
+      </div>
       </nav>
       <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-md-6">
-                <h1 class="fw-bold mt-6" id="home">Selamat Datang Pengunjung  </h1>
-                <h2 class="mt-3">PT. Kereta Api Indonesia (persero) </h2>
-                <h2 class="mt-3">DIVRE III Palembang </h2>
-                <p class="fs-5">Jika anda mempunyai keperluan <br>Silahkan lakukan pengisian data</p>
-                <button class="btn text-light rounded-pill fw-semibold" style="background-color: #ED6B23; border-color: #ED6B23" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Isi data diri Anda
+                <h2 class="fw-bold mt-6" id="beranda">Selamat Datang Pengunjung </h2>
+                <h4 class="fw-semibold mt-3">PT. Kereta Api Indonesia (persero) Divre III</h4>
+                <h4 class="fw-semibold mt-3">Palembang</h4>
+                <p class="fs-5">Jika anda mempunyai keperluan, Silahkan lakukan<br> pengisian data</p>
+                <button class="btn text-light rounded-pill fw-semibold" style="background-color: #2D2A70; border-color: #2D2A70" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Isi Keperluan
                 </button>
             </div>
             <div class="col-md-6">
-                <img src="{{ asset('assets/img/kereta.jpg') }}" alt="" class="img-fluid" height="800" width="700">
+                <img src="{{ asset('assets/img/kereta.jpg') }}" alt="" class="img-fluid" height="240" width="500">
+            </div>
+            <div class="col-md-6">
+
             </div>
         </div>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <img src="{{asset('assets/img/kereta 1.jpg')}}" alt="" class="img-fluid" height="240" width="400">
+          </div>
+        <div class="col-md-8">
+            <h2  class="fw-bold" style="color: #ED6B23; font-size: 24px" id="tentang">Tentang Perusahaan</h2>
+            <p>PT Kereta Api Indonesia atau disingkat PT KAI adalah Badan Usaha Milik Negara (BUMN) yang memiliki produk utama berupa layanan transportasi umum dengan kereta api. Adapun layanan yang disediakan PT Kereta Api Indonesia mencakup angkutan penumpang dan barang.</p>
         </div>
+        <div class="row mt-5">
+          <h4 class="fw-semibold" style="color: #ED6B23">Visi dan Misi</h4>
+          <p>Visi <br>Menjadi solusi ekosistem transportasi terbaik untuk Indonesia</p>
+          <dl>
+            Misi
+            <dd>
+              <ul>
+                <li>Untuk menyediakan sistem transportasi yang aman, efisien, berbasis digital, dan berkembang pesat untuk memenuhi kebutuhan  pelanggan</li>
+                <li>Untuk mengembangkan solusi transportasi massal yang terintegrasi melalui investasi dalam sumber daya manusia, infrastruktur, dan teknologi.</li>
+                <li>Untuk memajukan pembangunan nasional melalui kemitraan dengan para pemangku kepentingan, termasuk memprakarsai dan melaksanakan pengembangan infrastruktur-infrastruktur penting terkait transportasi.</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        </div>
+      </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog">
@@ -67,14 +98,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Kirim</button>
+        <button type="button" class="btn btn-primary" style="background-color: #ED6B23" >Kirim</button>
       </div>
     </div>
   </div>
 </div>
 <footer class="black text-center text-lg-start">
   <!-- Grid container -->
-  <div class="container p-4">
+<div class="container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -94,61 +125,14 @@
           </div>
         </div>
       </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase" id="contact">Hubungi Kami</h5>
-
-        <ul class="list-unstyled mb-0">
-          <li>
-          <img
-              src="{{ asset('assets/img/lgmaps.png') }}"
-              class="w-15"
-              class="h-15"
-            />
-            <a href="#!" class="text-black">Alamat Kantor</a>
-          </li>
-          <li>
-            <a href="#!" class="text-black">JL. Jenderal Ahmad Yani, 13 Ulu No. 541, 
-Palembang, 13 Ulu, Seberang Ulu II, 
-Palembang City, Sumatera Selatan 30116</a>
-          </li>
-          <li>
-          <img
-              src="{{ asset('assets/img/mail.png') }}"
-              class="w-15"
-              class="h-15"
-            />
-            <a href="#!" class="text-black">Email</a>
-          </li>
-          <li>
-            <a href="#!" class="text-black">cs@kai.id</a>
-          </li>
-          <li>
-          <img
-              src="{{ asset('assets/img/telepon.png') }}"
-              class="w-15"
-              class="h-15"
-            />
-            <a href="#!" class="text-black">Telepon</a>
-          </li>
-          <li>
-            <a href="#!" class="text-black">(0711) 515555</a>
-          </li>
-        </ul>
+      <div class="col-md-6">
+        <h5 class="fw-bold px-1 mb-3"style="color: #ED6B23;" id="kontak">Hubungi Kami</h5>
+        <i class="bi bi-geo-alt-fill px-1"></i><span class="fw-semibold">Alamat Kantor</span>
+        <p class="px-4">JL. Jenderal Ahmad Yani, 13 Ulu No. 541,  Palembang, 13 Ulu, Seberang Ulu II, Kota Palembang, Sumatera Selatan 30116</p>
+        <i class="bi bi-envelope-fill px-1"></i><span class="fw-semibold">Email</span>
+        <p class="px-4">cs@kai.id</p>
+        <i class="bi bi-telephone-forward-fill px-1"></i><span class="fw-semibold">Telepon</span>
+        <p class="px-4">(0711) 515555</p>
       </div>
-      <!--Grid column-->
-
-      
-      <!--Grid column-->
     </div>
-    <!--Grid row-->
-  </div>
-  
-</footer>
-
-
-
-
-
+</div>
