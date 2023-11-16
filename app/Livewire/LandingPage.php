@@ -10,4 +10,6 @@ class LandingPage extends Component
     {
         return view('livewire.landing-page');
     }
+
+    
 }
