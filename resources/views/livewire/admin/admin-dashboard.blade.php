@@ -38,55 +38,15 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
-                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Buku Tamu</span>
                                 <li class="w-100">
                                     <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data"> <span class="d-none d-sm-inline">DashBoard</span></a>
+                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi bi-book"> <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text"> <span class="d-none d-sm-inline">Laporan</span></a>
+                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill"> <span class="d-none d-sm-inline">Pengaturan</span></a>
                                 </li>
                             </a>
                         </li>
-                        <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white text-decoration-none">
-                                
-                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Tools&Components</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                </li>
-                                
-                            </ul>
-                        </li>
-                        <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white text-decoration-none">
-    
-                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Management User</span></a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                               
-                                    <a href="#" class="nav-link px-0 text-white text-decoration-none bi bi-people-fill"> <span class="d-none d-sm-inline">User</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white text-decoration-none">
-                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Report</span></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0 text-white text-decoration-none bi bi-file-text"> <span class="d-none d-sm-inline">Laporan</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white text-decoration-none">
-                                <i class=""></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white text-decoration-none bi bi-person-fill"> <span class="d-none d-sm-inline">Profil</span></a>
-                                </li>
-                                
-                        </li>
-                        
-                    </ul>
-                    <hr>
                 </div>
             </div>
             <div class="container pt-5">
