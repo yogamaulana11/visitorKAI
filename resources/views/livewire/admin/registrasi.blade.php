@@ -26,12 +26,12 @@
                     <div class="mb-2">
                     <h3 class="text-center mt-3">Registrasi</h3>
                     <div class="mb-2"> 
-                      <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap Anda">
+                      <label for="exampleInputEmail1" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Username Anda">
                     </div>
                     <div class="mb-2">
-                      <label for="exampleInputPassword1" class="form-label">Email</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="admin@admin.com">
+                      <label for="exampleInputPassword1" class="form-label">NIPP</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan NIPP Anda">
                     </div>
                     <div class="mb-2">
                       <label for="exampleInputPassword1" class="form-label">kata Sandi</label>
@@ -44,7 +44,7 @@
                   
                   <div class="mb-2">
                   <p class="text-center">
-                  <p class="text-center">Sudah punya akun? <a href="" class="text-center">Masuk</a></p> 
+                  <p class="text-center">Belum punya akun? <a href="" class="text-center">Masuk</a></p> 
                     </p>
 
             </div>
