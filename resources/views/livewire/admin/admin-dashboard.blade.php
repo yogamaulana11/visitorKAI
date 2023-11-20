@@ -75,7 +75,7 @@
             <div class="container pt-5">
                 <div class="row justify-content-evenly px-1">
                     <div class="col-md-4">
-                        Pengunjung Hari Ini
+                        Pengunjung Bulan Ini
                         <div class="container border rounded-3">
                             <div class="col-12">
                                 <div class="text-center fs-5 pt-3">Total Pengunjung</div>
@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-4">
             <div class="row justify-content-evenly px-1">
-                        Pengunjung Kemarin
+                        Pengunjung Tahun Ini
                         <div class="container border rounded-3">
                             <div class="col-12">
                                 <div class="text-center fs-5 pt-3">Total Pengunjung</div>
