@@ -1,7 +1,5 @@
 <div>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand ms-4" href="/">
@@ -49,7 +47,7 @@
                   <div class="mb-3">
                     <label class="form-label">Unit</label>
                     {{-- <label class="input-group-text">Unit</label> --}}
-                    <select class="form-select" id="unit">
+                    <select class="form-select" id="">
                       <option value="1">Pilih</option>
                       <option value="1">Unit 1</option>
                       <option value="2">Unit 2</option>
@@ -59,8 +57,8 @@
                   </div>
                 {{-- <button type="submit" class="mb-4 mt btn text-white" style="background-color: #ED6B23">Simpan Perubahan</button> --}}
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4 mt-4">
-                  <button class="btn me-md-2 text-white" type="button" style="background-color: #2D2A70">Batal</button>
-                  <button class="btn text-white" type="button" style="background-color: #ED6B23">Simpan Perubahan</button>
+                  <button class="btn me-md-2 text-white" style="background-color: #2D2A70">Batal</button>
+                  <button class="btn text-white" style="background-color: #ED6B23">Simpan Perubahan</button>
                 </div>
               </form>
         </div>
@@ -83,8 +81,8 @@
                   <input type="password" class="form-control" >
               </div>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4 mt-4">
-                <button class="btn me-md-2 text-white" type="button" style="background-color: #2D2A70">Batal</button>
-                <button class="btn text-white" type="button" style="background-color: #ED6B23">Simpan Perubahan</button>
+                <button class="btn me-md-2 text-white" style="background-color: #2D2A70">Batal</button>
+                <button class="btn text-white" style="background-color: #ED6B23">Simpan Perubahan</button>
               </div>
             </form>
           </div>
