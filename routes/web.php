@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Admin\VerifikasiKode;
+use App\Livewire\LandingPage;
+use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
 use App\Livewire\LandingPage;
 use App\Livewire\Auth\Register;
@@ -30,4 +33,5 @@ Route::get('admin/login', AdminLogin::class)->name('adminlogin');
 Route::get('admin/datatamu', DataTamu::class)->name('datatamu');
 
 
+Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
 
