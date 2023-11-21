@@ -5,7 +5,7 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
               </a>
               <div class="me-4">
-                <a href="" class="btn text-dark rounded-pill fw-semibold">Registrasi</a>
+                <a href="{{route('registrasi')}}" class="btn text-dark rounded-pill fw-semibold">Registrasi</a>
               </div>
         </div>
       </nav>
