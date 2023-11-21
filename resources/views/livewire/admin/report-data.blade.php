@@ -28,7 +28,7 @@
                     </ul>
                 </div>
           </nav>
-<div class="container-fluid">
+          <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #2D2A70">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -36,18 +36,15 @@
                         <span class="fs-5 d-none d-sm-inline">Buku Tamu</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
+                       
                                 <li class="w-100">
                                     <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data"> <span class="d-none d-sm-inline">DashBoard</span></a>
-                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi bi-book"> <span class="d-none d-sm-inline">Buku Tamu</span></a>
                                     <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text"> <span class="d-none d-sm-inline">Laporan</span></a>
                                     <a href="#" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill"> <span class="d-none d-sm-inline">Pengaturan</span></a>
-
                                 </li>
                             </a>
                         </li>
-                    </ul>
                 </div>
             </div>
             <div class="col py-3">
