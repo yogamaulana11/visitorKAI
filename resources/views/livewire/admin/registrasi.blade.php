@@ -53,11 +53,11 @@
 </div>
         <!-- Footer -->
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+  {{-- <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
     © 2023 Copyright:
     <a class="text-reset" href="#"> 2023 Visitor KAI | PT. Kereta Api Indonesia (Persero) Divre III Palembang.</a>
   </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
-</div>
+</div> --}}
