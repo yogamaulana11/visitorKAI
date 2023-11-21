@@ -6,6 +6,7 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Admin\AdminLogin;
 use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
+use App\Livewire\Admin\ViewData;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::get('register', Register::class)->name('register');
 Route::get('admin/lupapassword',LupaPassword::class )->name('LupaPassword');
 Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');
+Route::get('admin/viewdata', ViewData::class)->name('viewdata');
 
 
 
