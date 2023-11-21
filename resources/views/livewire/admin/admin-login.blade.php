@@ -39,7 +39,7 @@
                     </div>
                     <div class="mb-3 form-check">
                       <p class="text-end">
-                        <a href="lupapassword" class="text-decoration-none">Lupa Kata sandi</a>
+                        <a href="{{route('LupaPassword')}}" class="text-decoration-none">Lupa Kata sandi</a>
                         </p>
                     </div>
                     <button class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>

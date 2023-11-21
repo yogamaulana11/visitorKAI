@@ -5,7 +5,7 @@
               <img src="{{ asset('assets/img/logo.png') }}" alt="KAI"  height="24">
             </a>
             <div class="me-4">
-              <a href="" class="btn text-dark rounded-pill fw-normal">Masuk</a>
+              <a href="{{route('adminlogin')}}" class="btn text-dark rounded-pill fw-normal">Masuk</a>
             </div>
         </div>
     </nav>
@@ -13,23 +13,29 @@
           <div class="container mt-5">
               <div class="mx-auto" style="width: 500px; height: 500px;">
               <div class="container mx-3 border border-2 rounded-3 shadow-lg">
-              <form>
+              <form wire:submit.prevent="forLupaPassword">
                       <div class="mb-2">
                         <h4 class="text-center mt-3">Lupa Kata Sandi</h4>
                           <label for="exampleInputPassword1" class="form-label">NIPP</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan NIPP Anda">
-                          <label for="exampleInputPassword1" class="form-label">No.Telp</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No.Telp Anda">
+                          <input wire:model="nipp" type="text" class="form-control" placeholder="Masukkan nipp Anda">
+                          @error('nipp')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                       </div>
-                      <div 
-                        class="mt-3 form-check">
+                          <label  class="form-label">No.Telp</label>
+                          <input wire:model="no_telp"type="text" class="form-control" placeholder="Masukkan No.Telp Anda">
+                          @error('no_telp')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
+                          <div>
+                          <button type="submit" class="btn text-light rounded-pill mt-3 " style="background-color: #ED6B23">Konfirmasi</button>
+                          </div>
+                          <p class="text-center mt-3">
+                            <i class="bi bi-arrow-left-square"></i>
+                            <a href ="{{route('adminlogin')}}" class="text-decoration-none text-dark">Kembali Untuk Masuk</a>
+                          </p>
                       </div>
-                        <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Konfirmasi</button>
               </form>
-              <p class="text-center">
-                <i class="bi bi-arrow-left-square"></i>
-                <a href ="" class="text-decoration-none text-dark">Kembali Untuk Masuk</a>
-                </p>
               </div>
           </div>
           <footer class="navbar navbar-expand-lg bg-light">
