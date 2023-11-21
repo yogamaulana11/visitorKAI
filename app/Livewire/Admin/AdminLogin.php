@@ -8,25 +8,25 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminLogin extends Component
 {
-    public $npp;
+    public $nipp;
     public $password;
 
     public function render()
     {   
-        $admin = Admin::where('npp', $this->npp)->first();
+        $admin = Admin::where('nipp', $this->nipp)->first();
         // @dd($admin);
         return view('livewire.admin.admin-login', compact('admin'));
     }
 
     protected $messages = [
-        "npp.required" => "NPP tidak boleh kosong",
+        "nipp.required" => "nipp tidak boleh kosong",
         "password.required" => "Password Tidak boleh kosong",
         "password.min" => "Password min. 8 karakter"
     ];
 
     public function validasi(){
         $this->validate([
-            "npp" => "required",
+            "nipp" => "required",
             "password" => "required|min:8",
         ]);
     }
@@ -37,18 +37,18 @@ class AdminLogin extends Component
 
     public function forLogin(){
         $this->validasi();
-        $admin = Admin::where('npp', $this->npp)->first();
+        $admin = Admin::where('nipp', $this->nipp)->first();
         // @dd($admin);
         if($admin){
             if(Hash::check($this->password, $admin->password)){
                 session()->put('login', true);
-                session()->put('npp', $admin->npp);
+                session()->put('nipp', $admin->nipp);
                 return redirect()->route('admin.dashboard');
             }else{
                 session()->flash('error', 'Password salah');
             }
         }else{
-            session()->flash('error', 'NPP tidak ditemukan');
+            session()->flash('error', 'nipp tidak ditemukan');
         }
     }
 }

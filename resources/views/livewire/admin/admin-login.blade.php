@@ -24,9 +24,9 @@
                 <p class="text-center">Silahkan Login akun Anda</p>
                 <form wire:submit.prevent="forLogin">
                     <div class="mb-3">
-                      <label class="form-label">NPP</label>
-                      <input wire:model="npp" type="text" class="form-control" placeholder="Masukkan NPP Anda">
-                      @error('npp')
+                      <label class="form-label">NIPP</label>
+                      <input wire:model="nipp" type="text" class="form-control" placeholder="Masukkan nipp Anda">
+                      @error('nipp')
                           <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
