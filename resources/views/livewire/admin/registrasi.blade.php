@@ -20,14 +20,21 @@
               <div class="mb-2">
                 <h3 class="text-center mt-3">Registrasi</h3>
                   <div class="mb-2"> 
-                    <label for="exampleInputEmail1" class="form-label">NIPP</label>
+                    <label class="form-label">NIPP</label>
                     <input wire:model="nipp" type="text" class="form-control" placeholder="Masukan NIPP Anda">
                     @error('nipp')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
+                  <div class="mb-2"> 
+                    <label class="form-label">No.Telp</label>
+                    <input wire:model="no_telp" type="text" class="form-control" placeholder="Masukan No.Telp Anda">
+                    @error('no_telp')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
                   <div class="mb-2">
-                    <label  for= class="form-label">Role</label>
+                    <label class="form-label">Role</label>
                     <select wire:model="role" class="form-select" id="">
                       <option value="">Pilih</option>
                       <option value="admin">Admin</option>
@@ -37,7 +44,7 @@
                     </select>
                   </div>
                   <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">kata Sandi</label>
+                    <label class="form-label">kata Sandi</label>
                     <input wire:model="password" type="password" class="form-control" placeholder="Masukan Kata Sandi Anda">
                     @error('password')
                         <span class="text-danger">{{ $message }}</span>

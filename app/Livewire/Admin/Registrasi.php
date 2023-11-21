@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class Registrasi extends Component
 {
     public $nipp;
+    public $no_telp;
     public $role;
     public $password;
     
@@ -19,6 +20,7 @@ class Registrasi extends Component
     }
     protected $messages = [
         "nipp.required" => "nipp tidak boleh kosong",
+        "no_telp.required" => "no telp tidak boleh kosong",
         "role.required" => "role tidak boleh kosong",
         "password.required" => "password tidak boleh kosong",
         "password.min" => "password min. 8 karakter"
@@ -26,6 +28,7 @@ class Registrasi extends Component
     public function validasi(){
         $this->validate([
             "nipp" => "required",
+            "no_telp" => "required",
             "role" => "required",
             "password" => "required|min:8",
         ]);
@@ -34,6 +37,7 @@ class Registrasi extends Component
         $this->validasi();
     }
     public function forRegistrasi(){
+        $this->validasi();
         // $this->validasi();
         // $admin = new Admin();
         // $admin->nipp = $this->nipp;
@@ -43,6 +47,7 @@ class Registrasi extends Component
 
         Admin::create([
             'nipp'=>$this->nipp,
+            'no_telp'=>$this->no_telp,
             'role'=>$this->role,
             'password'=>Hash::make($this->password),
         ]);
