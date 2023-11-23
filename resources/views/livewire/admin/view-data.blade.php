@@ -36,12 +36,7 @@
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #2D2A70">
-                    <div
-                        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <a href="/"
-                            class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <span class="fs-5 d-none d-sm-inline">Buku Tamu</span>
-                        </a>
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                             id="menu">
                             <li class="nav-item">
@@ -65,30 +60,38 @@
                     </div>
                 </div>
 
-                <div class="container "> Detail Data Tamu
-                    <div class="border border-2 shadow-lg mt-3">
-                        <h6 class="px-3 mb-3 mt-3"> Nama Lengkap : Syahrul Ramadhan</h6>
-                        <h6 class="px-3 mb-3 mt-3"> Kontak : 081274663467</h6>
-                        <h6 class="px-3 mb-3 mt-3"> Instansi : Universitas Bina Darma</h6>
-                        <h6 class="px-3 mb-3 mt-3"> Tujuan : Ingin Bertemu Pak Tama</h6>
-                        <h6 class="px-3 mb-3 mt-3"> Keperluan : Bimbingan Project</h6>
-                        <h6 class="px-3 mb-3 mt-3"> Waktu Bertemu : -</h6><br>
-
-                        <div>
-                            <form>
-                                <div class="px-3 mb-3">
-                                    <label for="" class="form-label">Waktu bertemu</label>
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="px-3">
-                                    <button type="submit" class="btn btn-primary mb-3"
-                                        style="background-color: #ED6B23">Konfirmasi</button>
-                                </div>
-                            </form>
-                        </div>
+                <div class="col py-3">
+                    <h2>Detail Data Tamu</h2>
+                    <div>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Nama lengkap</li>
+                            <li class="list-group-item" style="width:220px">Syahrul Ramadhan</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Kontak</li>
+                            <li class="list-group-item" style="width:220px">081274663467</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Instansi</li>
+                            <li class="list-group-item" style="width:220px">Universitas Bina Darma</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Tujuan</li>
+                            <li class="list-group-item" style="width:220px">Unit IT</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Keperluan</li>
+                            <li class="list-group-item" style="width:220px">Bimbingan Project</li>
+                        </ul>
                     </div>
+                    <form class="container">
+                        <div class="mb-3 mt-3">
+                            <label for="exampleInputEmail1" class="form-label fw-semibold">Waktu Bertemu</label>
+                            <input type="time" class="form-control">
+                        </div>
+                        <button class="btn text-light rounded-pill" style="background-color: #ED6B23">Konfirmasi</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
