@@ -1,4 +1,11 @@
 <div>
+    <style>
+        .table-container {
+            max-height: 95vh; /* Sesuaikan dengan tinggi maksimum yang diinginkan */
+            overflow-y: auto;
+        }
+    </style>
+    
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand ms-4" href="/">
@@ -49,9 +56,10 @@
             </div>
             <div class="col py-3">
                 <div>
-                    <div class="container mt-3  table-responsive">
+                    <div class="container mt-3  table-responsive table-container">
                         <h4 class="mb-4">Daftar Tamu</h4>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered caption-top">
+                            <caption><strong>Daftar Tamu</strong></caption>
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
@@ -66,6 +74,162 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg" data-bs-toggle="modal" data-bs-target="#konfirmasiModal"></i>
+                                        <i class="btn btn-danger bi bi-x" data-bs-toggle="modal" data-bs-target="#konfirmasiModalditolak"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg"></i>
+                                        <i class="btn btn-danger bi bi-x"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr><tr>
+                                    <th scope="row">3</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg"></i>
+                                        <i class="btn btn-danger bi bi-x"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg"></i>
+                                        <i class="btn btn-danger bi bi-x"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg"></i>
+                                        <i class="btn btn-danger bi bi-x"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td scope="row">Putra Wahyudi Akbar</td>
+                                    <td scope="row">087801350884</td>
+                                    <td scope="row">Universitas Bina Darma</td>
+                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <td scope="row">
+                                        <i class="btn btn-success bi bi-check-lg"></i>
+                                        <i class="btn btn-danger bi bi-x"></i>
+                                    </td>
+                                    <td scope="row">
+                                        <div class="dropdown me-4">
+                                            <button class="btn  rounded-pill dropdown-toggle text-black"
+                                                data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class=" dropdown-menu">
+                                                <li>
+                                                    <i class="btn bi bi-eye"></i>Lihat
+                                                </li>
+                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
+                                                <li><i class="btn bi bi-trash"></i>hapus</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
                                     <td scope="row">Putra Wahyudi Akbar</td>
                                     <td scope="row">087801350884</td>
                                     <td scope="row">Universitas Bina Darma</td>
@@ -97,4 +261,41 @@
             </div>
         </div>
     </div>
+    <!-- Modal Konfirmasi -->
+<div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="konfirmasiModalLabel">Konfirmasi Tindakan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin mengkonfirmasi tindakan ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary">Konfirmasi</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="konfirmasiModalditolak" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="konfirmasiModalLabel">Konfirmasi Tindakan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="time">
+                Apakah Anda yakin ingin menolak konfirmasi ini
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary">Konfirmasi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
