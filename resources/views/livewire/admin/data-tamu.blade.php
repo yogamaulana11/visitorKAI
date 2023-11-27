@@ -23,8 +23,8 @@
                 </ul>
             </div>
     </nav>
-    <div class="container-fluid position-fixed">
-        <div class="row flex-nowrap">
+    <div class="container-fluid position-fixed" >
+        <div class="row flex-nowrap" >
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #2D2A70">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/"
@@ -55,7 +55,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col py-3">
+            <div class="col py-3" wire:poll>
                 <div>
                     <div class="container mt-3  table-responsive table-container">
                         <h4 class="mb-4">Daftar Tamu</h4>
@@ -75,7 +75,7 @@
                             </thead>
                             <tbody>
                                 <?php $n = 1; ?>
-                                @foreach($datas as $data)
+                                @forelse($datas as $data)
                                 <tr>
                                     <th scope="row">{{ $n }}</th>
                                     <td scope="row">{{ $data->nama }}</td>
@@ -106,7 +106,11 @@
                                     </td>
                                 </tr>
                                 <?php $n++; ?>
-                                @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Tidak ada data</td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
