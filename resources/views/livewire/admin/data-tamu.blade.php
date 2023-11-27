@@ -1,11 +1,12 @@
 <div>
     <style>
         .table-container {
-            max-height: 95vh; /* Sesuaikan dengan tinggi maksimum yang diinginkan */
+            max-height: 95vh;
+            /* Sesuaikan dengan tinggi maksimum yang diinginkan */
             overflow-y: auto;
         }
     </style>
-    
+
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand ms-4" href="/">
@@ -34,24 +35,24 @@
                         id="menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
-                        <li class="w-100">
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                <span class="d-none d-sm-inline">DashBoard</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
-                                    class="d-none d-sm-inline">Buku Tamu</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                <span class="d-none d-sm-inline">Laporan</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                <li class="w-100">
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                        <span class="d-none d-sm-inline">DashBoard</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
+                                            class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                    <span class="d-none d-sm-inline">Pengaturan</span></a>
 
+                                </li>
+                            </a>
                         </li>
-                        </a>
-                        </li>
-
+                    </ul>
                 </div>
             </div>
             <div class="col py-3">
@@ -67,20 +68,26 @@
                                     <th scope="col">Kontak</th>
                                     <th scope="col">Instansi</th>
                                     <th scope="col">Tujuan</th>
+                                    <th scope="col">Waktu dibuat</th>
                                     <th scope="col">Konfirmasi</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $n = 1; ?>
+                                @foreach($datas as $data)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
+                                    <th scope="row">{{ $n }}</th>
+                                    <td scope="row">{{ $data->nama }}</td>
+                                    <td scope="row">{{ $data->kontak }}</td>
+                                    <td scope="row">{{ $data->instansi }}</td>
+                                    <td scope="row">{{ $data->tujuan }}</td>
+                                    <td scope="row">{{ $data->created_at }}</td>
                                     <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg" data-bs-toggle="modal" data-bs-target="#konfirmasiModal"></i>
-                                        <i class="btn btn-danger bi bi-x" data-bs-toggle="modal" data-bs-target="#konfirmasiModalditolak"></i>
+                                        <i class="btn btn-success bi bi-check-lg" data-bs-toggle="modal"
+                                            data-bs-target="#konfirmasiModal"></i>
+                                        <i class="btn btn-danger bi bi-x" data-bs-toggle="modal"
+                                            data-bs-target="#konfirmasiModalditolak"></i>
                                     </td>
                                     <td scope="row">
                                         <div class="dropdown me-4">
@@ -98,162 +105,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr><tr>
-                                    <th scope="row">3</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td scope="row">Putra Wahyudi Akbar</td>
-                                    <td scope="row">087801350884</td>
-                                    <td scope="row">Universitas Bina Darma</td>
-                                    <td scope="row">Ingin bertemu pak tamawwwwwwwwwwwwwwww</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg"></i>
-                                        <i class="btn btn-danger bi bi-x"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <?php $n++; ?>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -262,42 +115,44 @@
         </div>
     </div>
     <!-- Modal Konfirmasi -->
-<div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="konfirmasiModalLabel">Tentukan Jadwalnya</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="date" class="px-4">
-                <input type="time" class="px-4">
-                <p class="mt-3">Apakah Anda Yakin ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Konfirmasi</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="konfirmasiModalditolak" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="konfirmasiModalLabel">Beri Alasan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <label for="exampleInputEmail1" class="form-label fw-semibold">Alasan</label>
-                <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> </textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary">Konfirmasi</button>
+    <div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="konfirmasiModalLabel">Tentukan Jadwalnya</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="date" class="px-4">
+                    <input type="time" class="px-4">
+                    <p class="mt-3">Apakah Anda Yakin ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary">Konfirmasi</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="modal fade" id="konfirmasiModalditolak" tabindex="-1" aria-labelledby="konfirmasiModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="konfirmasiModalLabel">Beri Alasan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="exampleInputEmail1" class="form-label fw-semibold">Alasan</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> </textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">Konfirmasi</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
