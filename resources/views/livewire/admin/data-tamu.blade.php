@@ -266,14 +266,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="konfirmasiModalLabel">Konfirmasi Tindakan</h5>
+                <h5 class="modal-title" id="konfirmasiModalLabel">Tentukan Jadwalnya</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Apakah Anda yakin ingin mengkonfirmasi tindakan ini?
+                <input type="date" class="px-4">
+                <input type="time" class="px-4">
+                <p class="mt-3">Apakah Anda Yakin ?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 <button type="button" class="btn btn-primary">Konfirmasi</button>
             </div>
         </div>
@@ -283,12 +285,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="konfirmasiModalLabel">Konfirmasi Tindakan</h5>
+                <h5 class="modal-title" id="konfirmasiModalLabel">Beri Alasan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="time">
-                Apakah Anda yakin ingin menolak konfirmasi ini
+                <label for="exampleInputEmail1" class="form-label fw-semibold">Alasan</label>
+                <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> </textarea>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
