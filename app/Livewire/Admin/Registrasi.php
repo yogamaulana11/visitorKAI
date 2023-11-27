@@ -12,7 +12,8 @@ class Registrasi extends Component
     public $no_telp;
     public $role;
     public $password;
-    
+    public $showModal = false;
+
     public function render()
     {
         $admin = Admin::where('nipp', $this->nipp)->first();
@@ -25,7 +26,8 @@ class Registrasi extends Component
         "password.required" => "password tidak boleh kosong",
         "password.min" => "password min. 8 karakter"
     ];
-    public function validasi(){
+    public function validasi()
+    {
         $this->validate([
             "nipp" => "required",
             "no_telp" => "required",
@@ -33,10 +35,12 @@ class Registrasi extends Component
             "password" => "required|min:8",
         ]);
     }
-    public function updated(){
+    public function updated()
+    {
         $this->validasi();
     }
-    public function forRegistrasi(){
+    public function forRegistrasi()
+    {
         $this->validasi();
         // $this->validasi();
         // $admin = new Admin();
@@ -46,13 +50,13 @@ class Registrasi extends Component
         // $admin->save();
 
         Admin::create([
-            'nipp'=>$this->nipp,
-            'no_telp'=>$this->no_telp,
-            'role'=>$this->role,
-            'password'=>Hash::make($this->password),
+            'nipp' => $this->nipp,
+            'no_telp' => $this->no_telp,
+            'role' => $this->role,
+            'password' => Hash::make($this->password),
         ]);
+        $this->showModal = true;
+        redirect('admin/login');
         // $this->emit('success', ['pesan'=>'Registrasi Berhasil']);
-        session()->flash('success', 'Registrasi Berhasil');
-        
     }
 }

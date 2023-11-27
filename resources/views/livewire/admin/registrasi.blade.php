@@ -12,6 +12,7 @@
             </div>
         </div>
       </nav>
+      
       <div class="container py-5">
       <div class="container mt-5 " >
         <div class="mx-auto " style="width: 500px; height: 500px;">
@@ -45,14 +46,15 @@
                   </div>
                   <div class="mb-2">
                     <label class="form-label">kata Sandi</label>
-                    <input wire:model="password" type="password" class="form-control" placeholder="Masukan Kata Sandi Anda">
+                    <input wire:model="password"  type="password" class="form-control" placeholder="Masukan Kata Sandi Anda">
                     @error('password')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
                   <div class="mb-1 form-check"></div>
-                  <button type="submit" class="btn text-light rounded-pill" style="background-color: #ED6B23">Daftar</button>
-              </div>
+                  <button data-bs-toggle="modal" data-bs-target="#modalSuccess" type="submit" class="btn text-light rounded-pill" style="background-color: #ED6B23">Daftar</button>
+                  
+                </div>
             </form>
                   <div class="mb-2">
                   <p class="text-center">

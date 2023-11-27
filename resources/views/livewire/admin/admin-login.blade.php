@@ -9,6 +9,11 @@
               </div>
         </div>
       </nav>
+      @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
       <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-md-6">

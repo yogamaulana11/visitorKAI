@@ -12,7 +12,7 @@ class AdminLogin extends Component
     public $password;
 
     public function render()
-    {   
+    {
         $admin = Admin::where('nipp', $this->nipp)->first();
         // @dd($admin);
         return view('livewire.admin.admin-login', compact('admin'));
@@ -24,30 +24,33 @@ class AdminLogin extends Component
         "password.min" => "Password min. 8 karakter"
     ];
 
-    public function validasi(){
+    public function validasi()
+    {
         $this->validate([
             "nipp" => "required",
             "password" => "required|min:8",
         ]);
     }
 
-    public function updated(){
+    public function updated()
+    {
         $this->validasi();
     }
 
-    public function forLogin(){
+    public function forLogin()
+    {
         $this->validasi();
         $admin = Admin::where('nipp', $this->nipp)->first();
         // @dd($admin);
-        if($admin){
-            if(Hash::check($this->password, $admin->password)){
+        if ($admin) {
+            if (Hash::check($this->password, $admin->password)) {
                 session()->put('login', true);
                 session()->put('nipp', $admin->nipp);
-                return redirect()->route('admin.dashboard');
-            }else{
+                return redirect('admin/dashboard');
+            } else {
                 session()->flash('error', 'Password salah');
             }
-        }else{
+        } else {
             session()->flash('error', 'nipp tidak ditemukan');
         }
     }

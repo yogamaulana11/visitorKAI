@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\AdminDashboard;
 use App\Livewire\Admin\VerifikasiKode;
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,5 @@ Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');
 Route::get('admin/datatamu', DataTamu::class)->name('datatamu');
 Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
-
-
+Route::get('admin/dashboard', AdminDashboard::class)->name('dashboard');
 Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
