@@ -6,9 +6,13 @@ use Livewire\Component;
 
 class AdminDashboard extends Component
 {
+    // public $labels = [];
+    // public $data = [];
     public function render()
     {
-        return view('livewire.admin.admin-dashboard');
+        $labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        $data = [10, 20, 30, 40, 50, 60, 70];
+        return view('livewire.admin.admin-dashboard', compact('labels', 'data'));
     }
 
     public function index()
