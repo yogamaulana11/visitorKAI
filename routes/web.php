@@ -11,6 +11,8 @@ use App\Livewire\Admin\DataTamu;
 use App\Livewire\Admin\AturUlangPassword;
 use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
+use App\Livewire\Admin\ReportData;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,7 @@ Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');
 Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
 Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
+Route::get('admin/reportdata', ReportData::class)->name('reportdata');
+
+
+
