@@ -44,9 +44,8 @@ class AdminLogin extends Component
         // @dd($admin);
         if ($admin) {
             if (Hash::check($this->password, $admin->password)) {
-                session()->put('login', true);
-                session()->put('nipp', $admin->nipp);
-                return redirect('admin/dashboard');
+                auth('admin-web')->login($admin, true);
+                return redirect('admin');
             } else {
                 session()->flash('error', 'Password salah');
             }

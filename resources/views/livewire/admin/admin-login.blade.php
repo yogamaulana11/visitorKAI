@@ -47,7 +47,7 @@
                         <a href="{{route('LupaPassword')}}" class="text-decoration-none">Lupa Kata sandi</a>
                         </p>
                     </div>
-                    <button class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>
+                    <button type="submit" class="btn text-light rounded-pill  " style="background-color: #ED6B23">Masuk</button>
                   </form>
             </div>
         </div>

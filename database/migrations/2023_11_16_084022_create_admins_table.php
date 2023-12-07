@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('no_telp')->unique();
             $table->enum('role', ['admin', 'pegawai', 'it support', 'sdm']);
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

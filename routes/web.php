@@ -22,7 +22,12 @@ use App\Livewire\Admin\LupaPassword;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::prefix('admin')->group(function(){
+    Route::middleware(['authAdmin'])->group(function(){
+        Route::get('/', AdminDashboard::class);
+        Route::get('datatamu', DataTamu::class);
+    });
+});
 
 Route::get('/', LandingPage::class)->name(LandingPage::class);
 Route::get('login', Login::class)->name('login');
@@ -30,7 +35,5 @@ Route::get('register', Register::class)->name('register');
 Route::get('admin/lupapassword', LupaPassword::class)->name('LupaPassword');
 Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');
-Route::get('admin/datatamu', DataTamu::class)->name('datatamu');
 Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
-Route::get('admin/dashboard', AdminDashboard::class)->name('dashboard');
 Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
