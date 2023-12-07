@@ -12,6 +12,7 @@ use App\Livewire\Admin\AturUlangPassword;
 use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
+use App\Livewire\Admin\ProfileSetting;
 
 
 /*
