@@ -7,59 +7,114 @@
         }
     </style>
 
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    {{-- navbar --}}
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="/">
+            <a class="navbar-brand ms-4" href="">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
 
             <div class="dropdown me-4">
-                <button class="btn  rounded-pill dropdown-toggle text-black" data-bs-toggle="dropdown">
+                <button class="btn  rounded-pill text-black" data-bs-toggle="dropdown">
                     Administrator
+                    <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20">
                 </button>
-                <ul class=" dropdown-menu">
+                <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-black" href="#">Pengaturan</a></li>
                     <li><a class="dropdown-item text-black" href="#">Keluar</a></li>
                 </ul>
             </div>
+        </div>
     </nav>
-    <div class="container-fluid position-fixed">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #2D2A70">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/"
-                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    {{-- end navbar --}}
 
-                    </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                        id="menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
-                        <li class="w-100">
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                <span class="d-none d-sm-inline">DashBoard</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
-                                    class="d-none d-sm-inline">Buku Tamu</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                <span class="d-none d-sm-inline">Laporan</span></a>
-                            <a href="#"
-                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                <span class="d-none d-sm-inline">Pengaturan</span></a>
 
-                        </li>
-                        </a>
-                        </li>
-                    </ul>
+    <div class="container-fluid">
+        <div class="row row-cols-sm-12">
+            <div class="col-2 " style="background-color: #2D2A70;">
+                <div class="">
+                    <div class="">
+                        <div
+                            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/"
+                                class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            </a>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                                id="menu">
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link align-middle px-0 text-white text-decoration-none"></a>
+                                </li>
+                                <li class="">
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                        <span class="d-none d-sm-inline">Dashboard</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
+                                        <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                    <a href="#"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                        <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col py-3" wire:poll>
+                <hr>
+            </div>      
+
+            
+            <div class="col-10 py-3">
+                @if($showform)
+                <div class="col mt-4">
+                    
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            Tentukan Jadwal
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <label for="">Waktu bertemu</label>
+                                <input type="datetime-local" name="" id="">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button wire:click='showForm' class="btn btn-danger">Batal</button>
+                            <button class="btn btn-success">Kirim</button>
+                        </div>
+                </div>
+
+                @elseif($showform1)
+                <div class="col mt-4">
+                    
+                    <div class="card text-center" style="width: 20rem;">
+                        <div class="card-header">
+                            Beri Alasan
+                        </div>
+                        <div class="card-body">
+                            <div class="">
+                                <label for="">Alasan</label>
+                                <textarea type="text" class="form-control" name="" id=""></textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button wire:click='showForm1' class="btn btn-danger">Batal</button>
+                            <button class="btn btn-success">Kirim</button>
+                        </div>
+                </div>
+                @else
+
                 <div>
                     <div class="container mt-3 table-responsive">
                         <h4 class="mb-4">Daftar Tamu</h4>
-                        <table class="table table-bordered caption-top">
+                        {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
+                        {{-- @if($showform)
+                            testing
+                        @else --}}
+                        <table class="table table-bordered caption-top" wire:poll>
                             <caption><strong>Daftar Tamu</strong></caption>
                             <thead>
                                 <tr class="text-center">
@@ -84,10 +139,8 @@
                                         <td scope="row">{{ $data->tujuan }}</td>
                                         <td scope="row">{{ $data->created_at }}</td>
                                         <td scope="row">
-                                            <button class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#konfirmasiModal">Terima</button>
-                                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                                data-bs-target="#konfirmasiModalditolak"> Tolak</button>
+                                            <button wire:click='showForm' class="btn btn-sm btn-success">Terima</button>
+                                            <button wire:click='showForm1' class="btn btn-sm btn-danger" > Tolak</button>
                                         </td>
                                         <td scope="col">
                                             <div class="col">
@@ -105,8 +158,10 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        {{-- @endif --}}
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -150,5 +205,6 @@
             </div>
         </div>
     </div>
+    
 
 </div>

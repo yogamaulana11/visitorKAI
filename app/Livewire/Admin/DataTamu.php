@@ -14,6 +14,8 @@ class DataTamu extends Component
     public $datas;
     public $jam_buat;
     public $take = +10;
+    public $showform = false;
+    public $showform1 = false;
 
     public function render()
     {
@@ -22,6 +24,22 @@ class DataTamu extends Component
         return view('livewire.admin.data-tamu');
     }
 
+    public function showForm(){
+        if($this->showform){
+            $this->showform = false;
+        } else {
+            $this->showform = true;
+        }
+    }
+    
+    public function showForm1(){
+        if($this->showform1){
+            $this->showform1 = false;
+        } else {
+            $this->showform1 = true;
+
+        }
+    }
     // public function mount()
     // {
     //     $this->datas = TamuData::latest()->get();
