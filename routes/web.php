@@ -13,7 +13,7 @@ use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
 use App\Livewire\Admin\ProfileSetting;
-
+use App\Livewire\Admin\ViewData;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +42,7 @@ Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulang
 Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
 Route::get('admin/reportdata', ReportData::class)->name('reportdata');
 Route::get('admin/setting', ProfileSetting::class)->name('setting');
+Route::get('admin/viewdata', ViewData::class)->name('viewdata');
+
+
 
