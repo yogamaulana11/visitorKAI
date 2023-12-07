@@ -9,6 +9,7 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Admin\AdminLogin;
 use App\Livewire\Admin\DataTamu;
 use App\Livewire\Admin\AturUlangPassword;
+use App\Livewire\Admin\EditData;
 use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
@@ -43,6 +44,7 @@ Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode'
 Route::get('admin/reportdata', ReportData::class)->name('reportdata');
 Route::get('admin/setting', ProfileSetting::class)->name('setting');
 Route::get('admin/viewdata', ViewData::class)->name('viewdata');
+Route::get('admin/editdata', EditData::class)->name('editdata');
 
 
 
