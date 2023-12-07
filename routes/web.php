@@ -1,10 +1,7 @@
 <?php
 
-
-use App\Livewire\Admin\AdminLogin;
-use App\Livewire\Admin\LupaPassword;
-use App\Livewire\Admin\Registrasi;
-use App\Livewire\Index;
+use App\Livewire\Admin\AdminDashboard;
+use App\Livewire\Admin\VerifikasiKode;
 use App\Livewire\LandingPage;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
@@ -37,6 +34,11 @@ Route::prefix('admin')->group(function(){
 Route::get('/', LandingPage::class)->name(LandingPage::class);
 Route::get('login', Login::class)->name('login');
 Route::get('register', Register::class)->name('register');
-Route::get('admin/lupapassword',LupaPassword::class )->name('LupaPassword');
-route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/lupapassword', LupaPassword::class)->name('LupaPassword');
+Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/login', AdminLogin::class)->name('adminlogin');
+Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
+Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
+Route::get('admin/reportdata', ReportData::class)->name('reportdata');
+Route::get('admin/setting', ProfileSetting::class)->name('setting');
 
