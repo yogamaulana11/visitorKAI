@@ -78,7 +78,7 @@
                         <div class="card-body">
                             <div class="card-text">
                                 <label for="">Waktu bertemu</label>
-                                <input type="datetime-local" name="" id="">
+                                <input type="datetime-local" class="form-control" name="" id="">
                             </div>
                         </div>
                         <div class="card-footer">
