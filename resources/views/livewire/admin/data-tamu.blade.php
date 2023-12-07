@@ -35,34 +35,34 @@
                         id="menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
-                                <li class="w-100">
-                                    <a href="#"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                        <span class="d-none d-sm-inline">DashBoard</span></a>
-                                    <a href="#"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
-                                            class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="#"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                        <span class="d-none d-sm-inline">Laporan</span></a>
-                                    <a href="#"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                    <span class="d-none d-sm-inline">Pengaturan</span></a>
+                        <li class="w-100">
+                            <a href="#"
+                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                <span class="d-none d-sm-inline">DashBoard</span></a>
+                            <a href="#"
+                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
+                                    class="d-none d-sm-inline">Buku Tamu</span></a>
+                            <a href="#"
+                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                <span class="d-none d-sm-inline">Laporan</span></a>
+                            <a href="#"
+                                class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                <span class="d-none d-sm-inline">Pengaturan</span></a>
 
-                                </li>
-                            </a>
+                        </li>
+                        </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col py-3">
+            <div class="col py-3" wire:poll>
                 <div>
-                    <div class="container mt-3  table-responsive table-container">
+                    <div class="container mt-3 table-responsive">
                         <h4 class="mb-4">Daftar Tamu</h4>
                         <table class="table table-bordered caption-top">
                             <caption><strong>Daftar Tamu</strong></caption>
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th scope="col">No</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Kontak</th>
@@ -70,43 +70,39 @@
                                     <th scope="col">Tujuan</th>
                                     <th scope="col">Waktu dibuat</th>
                                     <th scope="col">Konfirmasi</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $n = 1; ?>
-                                @foreach($datas as $data)
-                                <tr>
-                                    <th scope="row">{{ $n }}</th>
-                                    <td scope="row">{{ $data->nama }}</td>
-                                    <td scope="row">{{ $data->kontak }}</td>
-                                    <td scope="row">{{ $data->instansi }}</td>
-                                    <td scope="row">{{ $data->tujuan }}</td>
-                                    <td scope="row">{{ $data->created_at }}</td>
-                                    <td scope="row">
-                                        <i class="btn btn-success bi bi-check-lg" data-bs-toggle="modal"
-                                            data-bs-target="#konfirmasiModal"></i>
-                                        <i class="btn btn-danger bi bi-x" data-bs-toggle="modal"
-                                            data-bs-target="#konfirmasiModalditolak"></i>
-                                    </td>
-                                    <td scope="row">
-                                        <div class="dropdown me-4">
-                                            <button class="btn  rounded-pill dropdown-toggle text-black"
-                                                data-bs-toggle="dropdown">
-                                                Action
-                                            </button>
-                                            <ul class=" dropdown-menu">
-                                                <li>
-                                                    <i class="btn bi bi-eye"></i>Lihat
-                                                </li>
-                                                <li><i class="btn bi bi-pencil-square"></i>Edit</li>
-                                                <li><i class="btn bi bi-trash"></i>hapus</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php $n++; ?>
-                                @endforeach
+                                @forelse($datas as $data)
+                                    <tr>
+                                        <th scope="row">{{ $n }}</th>
+                                        <td scope="row">{{ $data->nama }}</td>
+                                        <td scope="row">{{ $data->kontak }}</td>
+                                        <td scope="row">{{ $data->instansi }}</td>
+                                        <td scope="row">{{ $data->tujuan }}</td>
+                                        <td scope="row">{{ $data->created_at }}</td>
+                                        <td scope="row">
+                                            <button class="btn btn-sm btn-success" data-bs-toggle="modal"
+                                                data-bs-target="#konfirmasiModal">Terima</button>
+                                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#konfirmasiModalditolak"> Tolak</button>
+                                        </td>
+                                        <td scope="col">
+                                            <div class="col">
+                                                <button type="button" class="btn btn-sm btn-primary">Lihat</button>
+                                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                                <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php $n++; ?>
+                                @empty
+                                    <tr>
+                                        <td colspan="8" class="text-center">Tidak ada data</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

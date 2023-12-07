@@ -13,11 +13,12 @@ class DataTamu extends Component
     public $tujuan;
     public $datas;
     public $jam_buat;
+    public $take = +10;
 
     public function render()
     {
-        $data = TamuData::latest()->get();
-        $this->datas = $data;
+        $data = TamuData::latest();
+        $this->datas = $data->take($this->take)->get();
         return view('livewire.admin.data-tamu');
     }
 
