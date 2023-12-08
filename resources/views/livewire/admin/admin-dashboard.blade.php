@@ -138,7 +138,7 @@
                     <div class="col-12">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="card-title">Statistik Pengunjung</div>
+                                <div class="card-title">Statistik Line Chart Pengunjung </div>
                                 <canvas id="myChart"></canvas>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                     <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="card-title">Statistik Pengunjung</div>
+                                <div class="card-title">Statistik Bar Chart Pengunjung</div>
                                 <div class="cart-container">
                                     <canvas id="myChart2"></canvas>
                                 </div>
@@ -158,7 +158,7 @@
                     <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="card-title">Statistik Pengunjung</div>
+                                <div class="card-title">Statistik Circle Chart Pengunjung</div>
                                 <canvas id="myChart3"></canvas>
                             </div>
                         </div>

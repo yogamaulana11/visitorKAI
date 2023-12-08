@@ -144,9 +144,15 @@
                                         </td>
                                         <td scope="col">
                                             <div class="col">
-                                                <button type="button" class="btn btn-sm btn-primary">Lihat</button>
+                                                <a href="{{route('viewdata')}}">
+                                                <button type="button" class="btn btn-sm btn-primary" >Lihat</button>
+                                                </a>
+                                                <a href="{{route('editdata')}}">
                                                 <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                                </a>
+                                                <a href="">
                                                 <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
