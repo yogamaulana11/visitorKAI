@@ -14,8 +14,8 @@
                         alt="profile.png">
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item text-black" href="#">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="#">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" href="{{route('setting')}}">Pengaturan</a></li>
+                    <li><a class="dropdown-item text-black" href="{{route('adminlogin')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -43,13 +43,13 @@
                                     <a href="#"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
                                         <span class="d-none d-sm-inline">Dashboard</span></a>
-                                    <a href="#"
+                                    <a href="datatamu"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="#"
+                                    <a href="{{route('reportdata')}}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
                                         <span class="d-none d-sm-inline">Laporan</span></a>
-                                    <a href="#"
+                                    <a href="{{route('setting')}}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>
                                 </li>

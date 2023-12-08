@@ -13,8 +13,8 @@
                         Administrator
                     </button>
                     <ul class=" dropdown-menu" >
-                        <li><a class="dropdown-item text-black" href="#">Pengaturan</a></li>
-                        <li><a class="dropdown-item text-black" href="#">Keluar</a></li>
+                        <li><a class="dropdown-item text-black" href="{{route('setting')}}">Pengaturan</a></li>
+                        <li><a class="dropdown-item text-black" href="{{route('adminlogin')}}">Keluar</a></li>
                     </ul>
                 </div>
           </nav>
