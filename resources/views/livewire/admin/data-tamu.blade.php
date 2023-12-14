@@ -1,5 +1,14 @@
 <div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
         .table-container {
             max-height: 95vh;
             /* Sesuaikan dengan tinggi maksimum yang diinginkan */
@@ -20,8 +29,8 @@
                     <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20">
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item text-black" href="{{route('setting')}}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="{{route('adminlogin')}}">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
+                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -52,10 +61,10 @@
                                     <a href="datatamu"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="{{route('reportdata')}}"
+                                    <a href="{{ route('reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
                                         <span class="d-none d-sm-inline">Laporan</span></a>
-                                    <a href="{{route('setting')}}"
+                                    <a href="{{ route('setting') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>
                                 </li>
@@ -64,109 +73,112 @@
                     </div>
                 </div>
                 <hr>
-            </div>      
+            </div>
 
-            
+
             <div class="col-10 py-3">
-                @if($showform)
-                <div class="col mt-4">
-                    
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            Tentukan Jadwal
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text">
-                                <label for="">Waktu bertemu</label>
-                                <input type="datetime-local" class="form-control" name="" id="">
+                @if ($showform)
+                    <div class="col mt-4">
+
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-header">
+                                Tentukan Jadwal
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <label for="">Waktu bertemu</label>
+                                    <input type="datetime-local" class="form-control" name="" id="">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button wire:click='showForm' class="btn btn-danger">Batal</button>
+                                <button class="btn btn-success">Kirim</button>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button wire:click='showForm' class="btn btn-danger">Batal</button>
-                            <button class="btn btn-success">Kirim</button>
-                        </div>
-                </div>
+                    @elseif($showform1)
+                        <div class="col mt-4">
 
-                @elseif($showform1)
-                <div class="col mt-4">
-                    
-                    <div class="card text-center" style="width: 20rem;">
-                        <div class="card-header">
-                            Beri Alasan
-                        </div>
-                        <div class="card-body">
-                            <div class="">
-                                <label for="">Alasan</label>
-                                <textarea type="text" class="form-control" name="" id=""></textarea>
+                            <div class="card text-center" style="width: 20rem;">
+                                <div class="card-header">
+                                    Beri Alasan
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <label for="">Alasan</label>
+                                        <textarea type="text" class="form-control" name="" id=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button wire:click='showForm1' class="btn btn-danger">Batal</button>
+                                    <button class="btn btn-success">Kirim</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <button wire:click='showForm1' class="btn btn-danger">Batal</button>
-                            <button class="btn btn-success">Kirim</button>
-                        </div>
-                </div>
-                @else
-
-                <div>
-                    <div class="container mt-3 table-responsive">
-                        <h4 class="mb-4">Daftar Tamu</h4>
-                        {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
-                        {{-- @if($showform)
+                        @else
+                            <div>
+                                <div class="container mt-3 table-responsive">
+                                    <h4 class="mb-4">Daftar Tamu</h4>
+                                    {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
+                                    {{-- @if ($showform)
                             testing
                         @else --}}
-                        <table class="table table-bordered caption-top" wire:poll>
-                            <caption><strong>Daftar Tamu</strong></caption>
-                            <thead>
-                                <tr class="text-center">
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Kontak</th>
-                                    <th scope="col">Instansi</th>
-                                    <th scope="col">Tujuan</th>
-                                    <th scope="col">Waktu dibuat</th>
-                                    <th scope="col">Konfirmasi</th>
-                                    <th scope="col">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $n = 1; ?>
-                                @forelse($datas as $data)
-                                    <tr>
-                                        <th scope="row">{{ $n }}</th>
-                                        <td scope="row">{{ $data->nama }}</td>
-                                        <td scope="row">{{ $data->kontak }}</td>
-                                        <td scope="row">{{ $data->instansi }}</td>
-                                        <td scope="row">{{ $data->tujuan }}</td>
-                                        <td scope="row">{{ $data->created_at }}</td>
-                                        <td scope="row">
-                                            <button wire:click='showForm' class="btn btn-sm btn-success">Terima</button>
-                                            <button wire:click='showForm1' class="btn btn-sm btn-danger" > Tolak</button>
-                                        </td>
-                                        <td scope="col">
-                                            <div class="col">
-                                                <a href="{{route('viewdata')}}">
-                                                <button type="button" class="btn btn-sm btn-primary" >Lihat</button>
-                                                </a>
-                                                <a href="{{route('editdata')}}">
-                                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
-                                                </a>
-                                                <a href="">
-                                                <button type="button" class="btn btn-sm btn-danger">Hapus</button>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php $n++; ?>
-                                @empty
-                                    <tr>
-                                        <td colspan="8" class="text-center">Tidak ada data</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                        {{-- @endif --}}
-                    </div>
-                </div>
+                                    <table class="table table-bordered caption-top" wire:poll>
+                                        <caption><strong>Daftar Tamu</strong></caption>
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">No</th>
+                                                <th scope="col">Nama</th>
+                                                <th scope="col">Kontak</th>
+                                                <th scope="col">Instansi</th>
+                                                <th scope="col">Tujuan</th>
+                                                <th scope="col">Waktu dibuat</th>
+                                                <th scope="col">Konfirmasi</th>
+                                                <th scope="col">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $n = 1; ?>
+                                            @forelse($datas as $data)
+                                                <tr>
+                                                    <th scope="row">{{ $n }}</th>
+                                                    <td scope="row">{{ $data->nama }}</td>
+                                                    <td scope="row">{{ $data->kontak }}</td>
+                                                    <td scope="row">{{ $data->instansi }}</td>
+                                                    <td scope="row">{{ $data->tujuan }}</td>
+                                                    <td scope="row">{{ $data->created_at }}</td>
+                                                    <td scope="row">
+                                                        <button wire:click='showForm'
+                                                            class="btn btn-sm btn-success">Terima</button>
+                                                        <button wire:click='showForm1' class="btn btn-sm btn-danger">
+                                                            Tolak</button>
+                                                    </td>
+                                                    <td scope="col">
+                                                        <div class="col">
+                                                            <a href="{{ route('viewdata') }}">
+                                                                <button type="button"
+                                                                    class="btn btn-sm btn-primary">Lihat</button>
+                                                            </a>
+                                                            <a href="{{ route('editdata') }}">
+                                                                <button type="button"
+                                                                    class="btn btn-sm btn-secondary">Edit</button>
+                                                            </a>
+                                                            <a href="">
+                                                                <button type="button"
+                                                                    class="btn btn-sm btn-danger">Hapus</button>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <?php $n++; ?>
+                                            @empty
+                                                <tr>
+                                                    <td colspan="8" class="text-center">Tidak ada data</td>
+                                                </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                    {{-- @endif --}}
+                                </div>
+                            </div>
                 @endif
             </div>
         </div>
@@ -211,6 +223,6 @@
             </div>
         </div>
     </div>
-    
+
 
 </div>

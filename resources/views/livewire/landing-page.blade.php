@@ -1,4 +1,16 @@
 <div>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand ms-4" href="/">
@@ -12,12 +24,12 @@
         </div>
     </nav>
     <div class="container mt-5">
-        @if($showSuccess)
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Data Berhasil di Buat!</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        @endif 
+        @if ($showSuccess)
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Data Berhasil di Buat!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="row mt-5">
             <div class="col-md-6">
                 <h2 class="fw-bold mt-6" id="beranda">Selamat Datang Pengunjung </h2>
@@ -140,5 +152,5 @@
                 </div>
             </div>
         </div>
-	</footer>
+    </footer>
 </div>

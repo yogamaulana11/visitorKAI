@@ -1,5 +1,16 @@
 <div>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -14,8 +25,8 @@
                         alt="profile.png">
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item text-black" href="{{route('setting')}}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="{{route('adminlogin')}}">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
+                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -46,10 +57,10 @@
                                     <a href="datatamu"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="{{route('reportdata')}}"
+                                    <a href="{{ route('reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
                                         <span class="d-none d-sm-inline">Laporan</span></a>
-                                    <a href="{{route('setting')}}"
+                                    <a href="{{ route('setting') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>
                                 </li>
