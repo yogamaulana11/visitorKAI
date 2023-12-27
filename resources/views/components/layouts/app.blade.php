@@ -12,6 +12,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    {{-- alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     @livewireStyles
 </head>
 
@@ -21,6 +24,25 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     @livewireScripts
+
+    <script>
+        Livewire.on('success', data => {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: data[0].pesan,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
+        })
+        Livewire.on('error', data => {
+            Swal.fire({
+                title: 'Gagal!',
+                text: data[0].pesan,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
+        })
+    </script>
 </body>
 
 </html>

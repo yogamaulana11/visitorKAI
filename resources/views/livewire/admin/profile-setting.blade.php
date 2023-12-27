@@ -51,7 +51,7 @@
                                         class="nav-link align-middle px-0 text-white text-decoration-none"></a>
                                 </li>
                                 <li class="">
-                                    <a href="#"
+                                    <a href="{{ url('admin') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
                                         <span class="d-none d-sm-inline">Dashboard</span></a>
                                     <a href="datatamu"

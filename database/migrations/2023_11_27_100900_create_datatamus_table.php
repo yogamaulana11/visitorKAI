@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('instansi');
             $table->string('keperluan');
             $table->string('tujuan');
+            $table->boolean('isKonfir', false)->nullable();
             $table->timestamps();
         });
     }
