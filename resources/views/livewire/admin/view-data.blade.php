@@ -1,6 +1,6 @@
 <div>
 
-    <head>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -11,55 +11,67 @@
                 font-family: 'Poppins', sans-serif;
             }
         </style>
-    </head>
 
     <div>
-        {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand ms-4" href="/">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
-                </a>
-                {{-- button login login redirect with icon --}}
-
-                <div class="dropdown me-4">
-                    <button class="btn  rounded-pill dropdown-toggle text-black" data-bs-toggle="dropdown">
-                        Administrator
-                    </button>
-                    <ul class=" dropdown-menu">
-                        <li><a class="dropdown-item text-black" href="#">Pengaturan</a></li>
-                        <li><a class="dropdown-item text-black" href="#">Keluar</a></li>
-                    </ul>
-                </div>
-        </nav>
-
+        {{-- navbar --}}
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <div class="row flex-nowrap">
-                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #2D2A70">
-                    <div
-                        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                            id="menu">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none">
-                            <li class="w-100">
-                                <a href="{{ url('admin') }}"
-                                    class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                    <span class="d-none d-sm-inline">DashBoard</span></a>
-                                <a href="{{ url('admin/datatamu') }}"
-                                    class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book"> <span
-                                        class="d-none d-sm-inline">Buku Tamu</span></a>
-                                <a href="{{ url('admin/reportdata') }}"
-                                    class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                    <span class="d-none d-sm-inline">Laporan</span></a>
-                                <a href="{{ url('admin/setting') }}"
-                                    class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                    <span class="d-none d-sm-inline">Pengaturan</span></a>
-                            </li>
+            <a class="navbar-brand ms-4" href="">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
+            </a>
+
+            <div class="dropdown me-4">
+                <button class="btn  rounded-pill text-black" data-bs-toggle="dropdown">
+                    Administrator
+                    <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20">
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
+                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {{-- end navbar --}}
+
+        {{-- sidebar --}}
+    <div class="container-fluid">
+        <div class="row row-cols-sm-12">
+            <div class="col-2 " style="background-color: #2D2A70;">
+                <div class="">
+                    <div class="">
+                        <div
+                            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/"
+                                class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                             </a>
-                            </li>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                                id="menu">
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link align-middle px-0 text-white text-decoration-none"></a>
+                                </li>
+                                <li class="">
+                                    <a href="{{ url('admin/') }}"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                        <span class="d-none d-sm-inline">Dashboard</span></a>
+                                    <a href="{{ url('admin/datatamu') }}"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
+                                        <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="{{ url('/admin/datatamu') }}"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                    <a href="{{ route('setting') }}"
+                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                        <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <hr>
+            </div>
+            {{-- end sidebar --}}
 
                 <div class="col py-3">
                     <h2>Detail Data Tamu</h2>
@@ -85,15 +97,23 @@
                             <li class="list-group-item" style="width:220px">{{ $tamuData->keperluan }}</li>
                         </ul>
                     </div>
-                    <form class="container">
+
+                    <div class="mt-3">
+                        <button type="button" class="btn text-light" style="background-color: #ED6B23">
+                            Kembali
+                        <a href="{{ url('admin/datatamu') }}"></a>
+                        </button>
+                    </div>
+                    {{-- <form class="container">
                         <div class="mb-3 mt-3">
                             <label for="exampleInputEmail1" class="form-label fw-semibold">Waktu Bertemu</label>
                             <input type="time" class="form-control">
                         </div>
                         <button class="btn text-light rounded-pill"
                             style="background-color: #ED6B23">Konfirmasi</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
     </div>
+</div>

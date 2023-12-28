@@ -135,7 +135,7 @@
 
                 {{-- chart --}}
                 <div class="row row-cols-sm-12">
-                    <div class="col-12">
+                    <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="card-title">Statistik Line Chart Pengunjung </div>
@@ -143,8 +143,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row row-cols-sm-12">
                     <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
@@ -155,6 +153,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                {{-- <div class="row row-cols-sm-12 justify-content-center">
                     <div class="col-6">
                         <div class="card mt-4">
                             <div class="card-body">
@@ -163,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             {{-- end chart --}}
 

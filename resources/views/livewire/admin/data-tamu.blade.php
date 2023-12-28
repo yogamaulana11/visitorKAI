@@ -158,14 +158,16 @@
                                                             <td scope="row">{{ $data->created_at }}</td>
                                                             {{-- konfirmasi --}}
                                                             <td scope="row">
-                                                                <button wire:click="showForm({{ $data->id }})"
-                                                                    class="btn btn-sm btn-success">Terima</button>
-                                                                <button wire:click='showForm1'
-                                                                    class="btn btn-sm btn-danger">
-                                                                    Tolak</button>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                                                    <button wire:click="showForm({{ $data->id }})"
+                                                                        class="btn btn-sm btn-success">Terima</button>
+                                                                    <button wire:click='showForm1'
+                                                                        class="btn btn-sm btn-danger">
+                                                                        Tolak</button>
+                                                                </div>
                                                             </td>
                                                             <td scope="col">
-                                                                <div class="col">
+                                                                <div class="col d-grid gap-2 d-md-flex justify-content-md-center">
                                                                     <div wire:click="detailData('{{ $data->id }}')"
                                                                         type="button" class="btn btn-sm btn-primary">
                                                                         Lihat</div>

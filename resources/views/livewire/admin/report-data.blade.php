@@ -82,11 +82,11 @@
                             <form class="col" action="">
                                 <div class="row mb-4">
                                     <label for="date" class="">Dari</label>
-                                    <input class="form-control-sm" type="date" id="" name="">
+                                    <input class="form-control" type="date" id="" name="">
                                 </div>
                                 <div class="row mb-4">
                                     <label for="date">Sampai</label>
-                                    <input class="form-control-sm" type="date" id="" name="">
+                                    <input class="form-control" type="date" id="" name="">
                                 </div>
 
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

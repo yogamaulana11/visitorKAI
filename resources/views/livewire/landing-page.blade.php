@@ -94,22 +94,37 @@
                         <div class="mb-3">
                             <label class="form-label">Nama Anda</label>
                             <input type="text" wire:model='nama' class="form-control">
+                            @error('nama')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Kontak</label>
                             <input type="text" wire:model='kontak' class="form-control">
+                            @error('kontak')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Perusahaan/Instansi</label>
                             <input type="text" wire:model='instansi' class="form-control">
+                            @error('instansi')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Tujuan</label>
                             <input type="text" wire:model='tujuan' class="form-control">
+                            @error('tujuan')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Keperluan</label>
                             <textarea type="text" wire:model='keperluan' class="form-control"> </textarea>
+                            @error('keperluan')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="text-end">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

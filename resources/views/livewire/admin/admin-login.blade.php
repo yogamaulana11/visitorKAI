@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <input wire:model="password" type="password" class="form-control"
-                            placeholder="Masukkan Password Anda">
+                            placeholder="Masukkan Password Anda">  
                         @error('password')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

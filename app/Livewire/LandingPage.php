@@ -25,6 +25,14 @@ class LandingPage extends Component
         ]);
     }
 
+    protected $messages = [
+        "nama.required" => "Nama tidak boleh kosong",
+        "kontak.required" => "Kontak tidak boleh kosong",
+        "instansi.required" => "Instansi tidak boleh kosong",
+        "keperluan.required" => "Keperluan tidak boleh kosong",
+        "tujuan.required" => "Tujuan tidak boleh kosong",
+    ];
+
     public function resetInput()
     {
         $this->nama = null;
@@ -50,5 +58,10 @@ class LandingPage extends Component
     public function render()
     {
         return view('livewire.landing-page');
+    }
+
+    public function ForLandingPage()
+    {
+        $this->validasi();
     }
 }
