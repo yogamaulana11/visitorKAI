@@ -97,13 +97,13 @@
                                     <div class="card-body">
                                         <div class="card-text">
                                             <label for="">Waktu bertemu</label>
-                                            <input type="datetime-local" class="form-control">
+                                            <input wire:model='jadwal_temu' type="datetime-local" class="form-control">
                                         </div>
                                     </div>
                                     <div class="card-footer">
                                         <button wire:click="showForm('{{ $this->id_tamu }}')"
                                             class="btn btn-danger">Batal</button>
-                                        <button wire:click="konfirTamu" class="btn btn-success">Kirim</button>
+                                        <button wire:click="jadwalTemu" class="btn btn-success">Kirim</button>
                                     </div>
                                 </div>
                             @elseif($showform1)
@@ -116,12 +116,12 @@
                                         <div class="card-body">
                                             <div class="">
                                                 <label for="">Alasan</label>
-                                                <textarea type="text" class="form-control"></textarea>
+                                                <textarea wire:model='keterangan_tolak' type="text" class="form-control"></textarea>
                                             </div>
                                         </div>
                                         <div class="card-footer">
                                             <button wire:click='showForm1' class="btn btn-danger">Batal</button>
-                                            <button class="btn btn-success">Kirim</button>
+                                            <button wire:click='keteranganTolak' class="btn btn-success">Kirim</button>
                                         </div>
                                     </div>
                                 @else
@@ -158,13 +158,27 @@
                                                             <td scope="row">{{ $data->created_at }}</td>
                                                             {{-- konfirmasi --}}
                                                             <td scope="row">
+                                                                @if($data->jadwal_temu !=null || $data->keterangan_tolak !==null)
+                                                                    {{-- sembunyikan --}}
+                                                                    @if($data->jadwal_temu)
+                                                                    <div class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                        <div class="btn btn-sm btn-success ">Diterima</div>
+                                                                        </div>    
+                                                                    @elseif($data->keterangan_tolak)
+                                                                    <div class="d-grip gap-2 d-md-flex justify-content-md-center">
+
+                                                                        <div class="btn btn-sm btn-danger">Ditolak</div>
+                                                                    </div>    
+                                                                    @endif
+                                                                @else
                                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                                                                     <button wire:click="showForm({{ $data->id }})"
                                                                         class="btn btn-sm btn-success">Terima</button>
-                                                                    <button wire:click='showForm1'
+                                                                    <button wire:click='showForm1({{ $data->id }})'
                                                                         class="btn btn-sm btn-danger">
                                                                         Tolak</button>
                                                                 </div>
+                                                                @endif
                                                             </td>
                                                             <td scope="col">
                                                                 <div class="col d-grid gap-2 d-md-flex justify-content-md-center">

@@ -15,11 +15,31 @@ class DataTamu extends Component
     public $jam_buat;
     public $keperluan;
     public $id_tamu;
+    public $keterangan_tolak;
     public $show_edit = false;
     public $take = +10;
     public $showform = false;
     public $showform1 = false;
     public $detail_data = false;
+    public $jadwal_temu;
+
+    public function jadwalTemu()
+    {
+        // $this->jadwal_temu = !$this->jadwal_temu;
+        $d = TamuData::find($this->id_tamu);
+        $d->jadwal_temu = $this->jadwal_temu;
+        $d->save();
+        $this->dispatch('success', ['pesan' => 'Jadwal berhasil dibuat']);
+        $this->showform = !$this->showform;
+    }
+
+    public function keteranganTolak(){
+        $d = TamuData::find($this->id_tamu);
+        $d->keterangan_tolak = $this->keterangan_tolak;
+        $d->save();
+        $this->dispatch('success', ['pesan' => 'Keterangan berhasil dibuat']);
+        $this->showform1 = !$this->showform1;
+    }
 
     public function render()
     {
@@ -40,8 +60,9 @@ class DataTamu extends Component
         $this->showform = !$this->showform;
     }
 
-    public function showForm1()
+    public function showForm1($id)
     {
+        $this->id_tamu = $id;
         $this->showform1 = !$this->showform1;
     }
 

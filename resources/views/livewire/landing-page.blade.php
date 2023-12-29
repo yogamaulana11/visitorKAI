@@ -127,7 +127,7 @@
                             @enderror
                         </div>
                         <div class="text-end">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <div type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</div>
                             <button data-bs-dismiss="modal" type="submit" class="btn btn-primary"
                                 style="background-color: #ED6B23">Kirim</button>
                         </div>

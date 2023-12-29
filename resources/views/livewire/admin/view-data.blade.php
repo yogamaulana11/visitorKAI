@@ -96,13 +96,22 @@
                             <li class="list-group-item fw-bold" style="width:175px">Keperluan</li>
                             <li class="list-group-item" style="width:220px">{{ $tamuData->keperluan }}</li>
                         </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Janji Temu</li>
+                            <li class="list-group-item" style="width:220px">{{ $tamuData->jadwal_temu }}</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Alasan Ditolak</li>
+                            <li class="list-group-item" style="width:220px">{{ $tamuData->keterangan_tolak }}</li>
+                        </ul>
                     </div>
 
                     <div class="mt-3">
-                        <button type="button" class="btn text-light" style="background-color: #ED6B23">
-                            Kembali
-                        <a href="{{ url('admin/datatamu') }}"></a>
-                        </button>
+                        <a href="{{ url('admin/datatamu') }}">
+                            <button type="button" class="btn text-light" style="background-color: #ED6B23">
+                                Kembali
+                            </button>
+                        </a>
                     </div>
                     {{-- <form class="container">
                         <div class="mb-3 mt-3">

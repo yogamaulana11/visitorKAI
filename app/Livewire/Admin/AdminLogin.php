@@ -18,6 +18,7 @@ class AdminLogin extends Component
         return view('livewire.admin.admin-login', compact('admin'));
     }
 
+
     protected $messages = [
         "nipp.required" => "nipp tidak boleh kosong",
         "password.required" => "Password Tidak boleh kosong",
@@ -47,10 +48,12 @@ class AdminLogin extends Component
                 auth('admin-web')->login($admin, true);
                 return redirect('admin');
             } else {
-                session()->flash('error', 'Password salah');
+                // session()->flash('error', 'Password salah');
+                $this->dispatch('error', ['pesan' => 'Password salah']);
             }
         } else {
-            session()->flash('error', 'nipp tidak ditemukan');
+            // session()->flash('error', 'nipp tidak ditemukan');
+            $this->dispatch('error', ['pesan' => 'nipp tidak ditemukan']);
         }
     }
 }

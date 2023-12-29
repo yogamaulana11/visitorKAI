@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('instansi');
             $table->string('keperluan');
             $table->string('tujuan');
-            $table->boolean('isKonfir', false)->nullable();
+            $table->string('jadwal_temu')->nullable();
+            $table->string('keterangan_tolak')->nullable();
             $table->timestamps();
         });
     }

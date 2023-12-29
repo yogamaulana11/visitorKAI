@@ -1,5 +1,22 @@
 <div>
-
+    <style>
+    .sh{
+        cursor: pointer;
+    }
+    .sh, sh:hover{
+        color:#333
+    }
+    </style>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -49,9 +66,10 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input wire:model="password" type="password" class="form-control"
-                            placeholder="Masukkan Password Anda">  
+                        <label for="">Password</label>
+                        <input type="password" id="myInput" wire:model='password' class="form-control" placeholder="Masukkan Password Anda">
+                        <label for="">Show Password</label>
+                        <input type="checkbox" onclick="myFunction()" value="show"> 
                         @error('password')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
