@@ -76,64 +76,8 @@
 
             {{-- card --}}
             <div class="col-10">
-                <div class="row row-cols-sm-12">
-                    <div class="col mt-4">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Total
-                            </div>
-                            <div class="card-body">
-                                <div class="card-text">5</div>
-                            </div>
-                            <div class="card-footer">
-                                Pengunjung Hari Ini
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mt-4">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Total
-                            </div>
-                            <div class="card-body">
-                                <div class="card-text">5</div>
-                            </div>
-                            <div class="card-footer">
-                                Pengunjung Minggu Ini
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mt-4">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Total
-                            </div>
-                            <div class="card-body">
-                                <div class="card-text">5</div>
-                            </div>
-                            <div class="card-footer">
-                                Pengunjung Bulan Ini
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mt-4">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Total
-                            </div>
-                            <div class="card-body">
-                                <div class="card-text">5</div>
-                            </div>
-                            <div class="card-footer">
-                                Pengunjung Tahun Ini
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- end card --}}
-
-
-                {{-- chart --}}
+                <livewire:admin.components.dashboard/>
+                {{-- cart --}}
                 <div class="row row-cols-sm-12">
                     <div class="col-6">
                         <div class="card mt-4">
@@ -154,16 +98,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="row row-cols-sm-12 justify-content-center">
-                    <div class="col-6">
-                        <div class="card mt-4">
-                            <div class="card-body">
-                                <div class="card-title">Statistik Circle Chart Pengunjung</div>
-                                <canvas id="myChart3"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                {{-- end cart --}}
             </div>
             {{-- end chart --}}
 
@@ -173,7 +108,7 @@
 
             <script>
                 const ctx = document.getElementById('myChart');
-
+                var datas = {{ Js::from($data) }}
                 new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -182,7 +117,7 @@
                         ],
                         datasets: [{
                             label: 'Jumlah Pengunjung',
-                            data: [12, 19, 3, 5, 2, 3, 4, 7, 42, 3, 52, 34, ],
+                            data: datas,
                             borderWidth: 1
                         }]
                     },
@@ -206,7 +141,7 @@
                         ],
                         datasets: [{
                             label: 'Jumlah Pengunjung',
-                            data: [12, 19, 3, 5, 2, 3, 4, 7, 42, 3, 52, 34, ],
+                            data: datas,
                             borderWidth: 1
                         }]
                     },
@@ -230,7 +165,7 @@
                         ],
                         datasets: [{
                             label: 'Jumlah Pengunjung',
-                            data: [12, 19, 3, 5, 2, 3, 4, 7, 42, 3, 52, 34, ],
+                            data: datas,
                             borderWidth: 1
                         }]
                     },

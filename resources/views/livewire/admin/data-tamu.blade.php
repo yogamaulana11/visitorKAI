@@ -162,12 +162,11 @@
                                                                     {{-- sembunyikan --}}
                                                                     @if($data->jadwal_temu)
                                                                     <div class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                        <div class="btn btn-sm btn-success ">Diterima</div>
+                                                                        <button class="btn btn-sm btn-success" disabled>Diterima</button>
                                                                         </div>    
                                                                     @elseif($data->keterangan_tolak)
                                                                     <div class="d-grip gap-2 d-md-flex justify-content-md-center">
-
-                                                                        <div class="btn btn-sm btn-danger">Ditolak</div>
+                                                                        <button type="button" class="btn btn-sm btn-danger" disabled>Ditolak</button>
                                                                     </div>    
                                                                     @endif
                                                                 @else
