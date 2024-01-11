@@ -52,10 +52,8 @@
                                 <label class="form-label">Role</label>
                                 <select wire:model="role" class="form-select" id="">
                                     <option value="">Pilih</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="pegawai">Pegawai</option>
-                                    <option value="it support">IT Support</option>
-                                    <option value="sdm">SDM</option>
+                                    <option value="admin">Unit 1</option>
+                                    <option value="pegawai">Unit 2</option>
                                 </select>
                             </div>
                             <div class="mb-2">
