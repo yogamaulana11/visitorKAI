@@ -16,8 +16,8 @@ class adminAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth('admin-web')->check()){
-            if(auth('admin-web')->user()){
+        if (auth('admin-web')->check()) {
+            if (auth('admin-web')->user()) {
                 return $next($request);
             } else {
                 return redirect('admin/login');

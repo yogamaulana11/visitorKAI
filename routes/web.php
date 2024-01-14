@@ -27,13 +27,13 @@ use App\Livewire\Admin\ViewData;
 |
 */
 
+Route::get('admin/login', AdminLogin::class)->name('adminlogin');
+Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::prefix('admin')->group(function () {
     Route::middleware(['authAdmin'])->group(function () {
         Route::get('/', AdminDashboard::class);
         Route::get('datatamu', DataTamu::class);
         Route::get('lupapassword', LupaPassword::class)->name('LupaPassword');
-        Route::get('registrasi', Registrasi::class)->name('registrasi');
-        Route::get('login', AdminLogin::class)->name('adminlogin');
         Route::get('aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
         Route::get('verifikasikode', VerifikasiKode::class)->name('verifikasikode');
         Route::get('reportdata', ReportData::class)->name('reportdata');
