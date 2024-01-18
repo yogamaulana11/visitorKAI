@@ -120,7 +120,7 @@
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button wire:click='showForm1' class="btn btn-danger">Batal</button>
+                                            <button wire:click="showForm1('{{ $this->id_tamu }}')" class="btn btn-danger">Batal</button>
                                             <button wire:click='keteranganTolak' class="btn btn-success">Kirim</button>
                                         </div>
                                     </div>

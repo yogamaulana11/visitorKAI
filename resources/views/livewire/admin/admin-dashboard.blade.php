@@ -91,9 +91,7 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="card-title">Statistik Bar Chart Pengunjung</div>
-                                <div class="cart-container">
-                                    <canvas id="myChart2"></canvas>
-                                </div>
+                                <canvas id="myChart2"></canvas>
                             </div>
                         </div>
                     </div>
