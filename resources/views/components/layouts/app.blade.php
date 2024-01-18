@@ -44,6 +44,32 @@
                 confirmButtonText: 'OK'
             })
         })
+        Livewire.on('del_confirm', id => {
+            Swal.fire({
+                title: "Apakah Anda Yakin?",
+                text: "Data ini akan di hapus permanen!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya"
+            }).then((result) => {
+                if (result[0].value) {
+                    Swal.fire({
+                        title: "Berhasil!",
+                        text: result[0].pesan,
+                        icon: "success"
+                    });
+                }
+            });
+        })
+        Livewire.on('success1', data => {
+            console.log(data[0].pesan)
+            var alert_success = document.getElementById('alert-success')
+            var alertShow = bootstrap.Modal.getOrCreateInstance(alert_success)
+            document.getElementById('message-success').innerHTML = data[0].pesan
+            alertShow.show()
+        })
     </script>
 </body>
 

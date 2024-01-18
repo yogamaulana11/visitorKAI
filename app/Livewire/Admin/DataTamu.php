@@ -23,6 +23,9 @@ class DataTamu extends Component
     public $detail_data = false;
     public $jadwal_temu;
     public $cToday; // jumlah tamu hari ini
+    public $_instance;
+    public $ID;
+    public $aktifmodal = false;
 
     public function render()
     {
@@ -33,43 +36,46 @@ class DataTamu extends Component
     }
 
     // pengunjung dalam 1 tahun
-    public function jYear(){
+    public function jYear()
+    {
         $datas = TamuData::get();
         $year_now = intval(\Carbon\Carbon::now()->isoFormat('Y'));
         $first_year = intval(\Carbon\Carbon::now()->startOfYear()->isoFormat('MM'));    // this is month on first year
         $last_year = intval(\Carbon\Carbon::now()->endOfYear()->isoFormat('MM'));       // this is month on last year
         $a = [];
-        foreach($datas as $data){
+        foreach ($datas as $data) {
 
             $dyear = intval($data->created_at->format('Y'));
-            if($dyear == $year_now){
-                    $a[] = $dyear;
+            if ($dyear == $year_now) {
+                $a[] = $dyear;
             }
             $count_year = count($a);
         }
-        return $count_year;
+        return $count_year ?? 0;
     }
 
     // pengunjung dalam sebulan
-    public function jMonth(){
+    public function jMonth()
+    {
         $datas = TamuData::get();
         $month_now = intval(\Carbon\Carbon::now()->startOfMonth()->isoFormat('MM'));
         $year_now = intval(\Carbon\Carbon::now()->startOfMonth()->isoFormat('Y'));
-        
+
         $a = [];
-        foreach($datas as $data){
+        foreach ($datas as $data) {
             $d = intval($data->created_at->format('m'));
             $y = intval($data->created_at->format('Y'));
-            if($d==$month_now && $y == $year_now){
+            if ($d == $month_now && $y == $year_now) {
                 $a[] = $d;
             }
             $count_month = count($a);
         }
-        return $count_month;
+        return $count_month ?? 0;
     }
 
     // pengunjung dalam seminggu
-    public function jWeek(){
+    public function jWeek()
+    {
         $datas = TamuData::get();
         $first_week = \Carbon\Carbon::now()->startOfWeek()->isoFormat('DD');
         $last_week = \Carbon\Carbon::now()->endOfWeek()->isoFormat('DD');
@@ -77,13 +83,12 @@ class DataTamu extends Component
         $mnow = \Carbon\Carbon::now()->endOfWeek()->isoFormat('MM');
         // var_dump($first_week);
         $a = [];
-        foreach($datas as $data){
+        foreach ($datas as $data) {
             $c = intval($data->created_at->format('d'));
             $y = intval($data->created_at->format('Y'));
             $m = intval($data->created_at->format('m'));
             // var_dump($m);
-            if($c>=intval($first_week) && $c <=intval($last_week) && $y==$ynow && $m==$mnow)
-            {
+            if ($c >= intval($first_week) && $c <= intval($last_week) && $y == $ynow && $m == $mnow) {
                 // $count_week= $data->count();
                 $a[] = $c;
                 // var_dump($c);
@@ -91,24 +96,29 @@ class DataTamu extends Component
             // var_dump($count_week);
             $count_week = count($a);
         }
-        return $count_week;
+        return $count_week ?? 0;
     }
 
     // pengunjung hari ini
     public function jToday()
     {
-        $today = \Carbon\Carbon::today()->isoFormat("Y-MM-DD");
-        $datas = TamuData::get();
-        $a = [];
-        foreach($datas as $data){
-            if($data->created_at->format('Y-m-d') == $today)
-            {
-                // $d = $data->count();
-                $a[] = $data;
+        try {
+            $today = \Carbon\Carbon::today()->isoFormat("Y-MM-DD");
+            $datas = TamuData::get();
+            $a = [];
+            foreach ($datas as $data) {
+                if ($data->created_at->format('Y-m-d') == $today) {
+                    // $d = $data->count();
+                    $a[] = $data;
+                } else {
+                    $count_today = 0;
+                }
+                $count_today = count($a);
             }
-            $count_today = count($a);
+            return $count_today ?? 0;
+        } catch (\Exception $e) {
+            return $count_today = 0;
         }
-        return $count_today;
     }
 
     public function jadwalTemu()
@@ -121,7 +131,8 @@ class DataTamu extends Component
         $this->showform = !$this->showform;
     }
 
-    public function keteranganTolak(){
+    public function keteranganTolak()
+    {
         $d = TamuData::find($this->id_tamu);
         $d->keterangan_tolak = $this->keterangan_tolak;
         $d->save();
@@ -129,7 +140,7 @@ class DataTamu extends Component
         $this->showform1 = !$this->showform1;
     }
 
-    
+
 
     public function detailData($id)
     {
@@ -186,11 +197,25 @@ class DataTamu extends Component
         $this->show_edit = !$this->show_edit;
     }
 
+    public function toggleModal()
+    {
+        $this->aktifmodal = !$this->aktifmodal;
+    }
     // hapus data tamu
     public function hapusTamu($id)
     {
         $d = TamuData::find($id);
+        $this->ID = $d->id;
+        // $this->dispatch('', ['value' => $this->delete($id)]);
+        // $this->dispatch('success1', ['pesan' => 'Data berhasil dihapus']);
+        $this->aktifmodal = !$this->aktifmodal;
+    }
+
+    public function delete()
+    {
+        $d = TamuData::find($this->ID);
         $d->delete();
+        $this->aktifmodal = !$this->aktifmodal;
         $this->dispatch('success', ['pesan' => 'Data berhasil dihapus']);
     }
 }

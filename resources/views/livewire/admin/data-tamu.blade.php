@@ -126,13 +126,13 @@
                                     </div>
                                 @else
                                     <div>
-                                        <div class="container mt-3 table-responsive">
+                                        <div class="container mt-3 table-responsive" wire:poll.5s>
                                             <h4 class="mb-4">Daftar Tamu</h4>
                                             {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
                                             {{-- @if ($showform)
                         testing
                     @else --}}
-                                            <table class="table table-bordered caption-top" wire:poll>
+                                            <table class="table table-bordered caption-top">
                                                 <caption><strong>Daftar Tamu</strong></caption>
                                                 <thead>
                                                     <tr class="text-center">
@@ -158,29 +158,38 @@
                                                             <td scope="row">{{ $data->created_at }}</td>
                                                             {{-- konfirmasi --}}
                                                             <td scope="row">
-                                                                @if($data->jadwal_temu !=null || $data->keterangan_tolak !==null)
+                                                                @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)
                                                                     {{-- sembunyikan --}}
-                                                                    @if($data->jadwal_temu)
-                                                                    <div class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                        <button class="btn btn-sm btn-success" disabled>Diterima</button>
-                                                                        </div>    
+                                                                    @if ($data->jadwal_temu)
+                                                                        <div
+                                                                            class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                            <button class="btn btn-sm btn-success"
+                                                                                disabled>Diterima</button>
+                                                                        </div>
                                                                     @elseif($data->keterangan_tolak)
-                                                                    <div class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                        <button type="button" class="btn btn-sm btn-danger" disabled>Ditolak</button>
-                                                                    </div>    
+                                                                        <div
+                                                                            class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-sm btn-danger"
+                                                                                disabled>Ditolak</button>
+                                                                        </div>
                                                                     @endif
                                                                 @else
-                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                                                    <button wire:click="showForm({{ $data->id }})"
-                                                                        class="btn btn-sm btn-success">Terima</button>
-                                                                    <button wire:click='showForm1({{ $data->id }})'
-                                                                        class="btn btn-sm btn-danger">
-                                                                        Tolak</button>
-                                                                </div>
+                                                                    <div
+                                                                        class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                                                        <button
+                                                                            wire:click="showForm({{ $data->id }})"
+                                                                            class="btn btn-sm btn-success">Terima</button>
+                                                                        <button
+                                                                            wire:click='showForm1({{ $data->id }})'
+                                                                            class="btn btn-sm btn-danger">
+                                                                            Tolak</button>
+                                                                    </div>
                                                                 @endif
                                                             </td>
                                                             <td scope="col">
-                                                                <div class="col d-grid gap-2 d-md-flex justify-content-md-center">
+                                                                <div
+                                                                    class="col d-grid gap-2 d-md-flex justify-content-md-center">
                                                                     <div wire:click="detailData('{{ $data->id }}')"
                                                                         type="button" class="btn btn-sm btn-primary">
                                                                         Lihat</div>
@@ -190,12 +199,9 @@
                                                                         class="btn btn-sm btn-secondary">
                                                                         Edit
                                                                     </div>
-                                                                    <a href="">
-                                                                        <div wire:click="hapusTamu('{{ $data->id }}')"
-                                                                            type="button"
-                                                                            class="btn btn-sm btn-danger">
-                                                                            Hapus</div>
-                                                                    </a>
+                                                                    <div wire:click="hapusTamu('{{ $data->id }}')"
+                                                                        type="button" class="btn btn-sm btn-danger">
+                                                                        Hapus</div>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -255,8 +261,95 @@
             </div>
         </div>
     </div>
+    <!-- modal aktif -->
+    <!-- Active Modal -->
+    @if ($aktifmodal)
+        <div class="modal fade show" id="activeModal" tabindex="-1" aria-labelledby="activeModalLabel"
+            aria-hidden="false" style="display: block;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title text-center" id="activeModalLabel">Apakah Anda Yakin?</h5>
+                        <button wire:click="toggleModal" type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{-- <div class="text-center fs-3 fw-semibold">Apakah Anda Yakin?</div> --}}
+                        <div class="text-center mt-3">
+                            Data ini akan dihapus secara permanen
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button wire:click="delete" type="button" class="btn btn-primary"
+                            data-bs-dismiss="modal">Ya</button>
+                        <div type="button" wire:click="toggleModal" class="btn btn-danger">Tidak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+    <!-- Script to make the modal active -->
+    <script>
+        $(document).ready(function() {
+            $('#activeModal').modal('show');
+        });
+    </script>
+    {{-- <div class="modal" id="alert-error" tabindex="-1" aria-labelledby="" aria-hidden="true"
+        style="dispaly: block">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-5" id=""></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div wire:loading wire:target="delete" class="modal-body">
+                    <div class="row">
+                        <div class="text-center fs-3 text-danger">Gagal</div>
+                        <div class="text-center" style="text-size: 150px">
+                            <img src="{{ asset('img/error.svg') }}" alt="error">
+                        </div>
+                        <div class="text-center mt-3" id="message-error">Data ini gagal dihapus</div>
+                    </div>
+                </div>
+                <div wire:loading.remove wire:target="delete" class="modal-body">
+                    <div class="row">
+                        <div class="text-center fs-3 text-danger">Gagal</div>
+                        <div class="text-center" style="text-size: 150px">
+                            <img src="{{ asset('img/error.svg') }}" alt="error">
+                        </div>
+                        <div class="text-center mt-3" id="message-error">Data ini gagal dihapus</div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn rounded-pill btn-primary" data-bs-dismiss="modal">Oke</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
-
+    {{-- modal --}}
+    <div class="modal" id="alert-success" tabindex="1" aria-labelledby="" aria-hidden="true"
+        style="dispaly: block">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white">
+                <div class="modal-header border-bottom-0">
+                    <h1 class="modal-title fs-5" id=""></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-bottom-0">
+                    <div class="row">
+                        <div class="text-center fs-3">Apakah anda yakin?</div>
+                        <div class="text-center" id="message-success">Data ini akan dihapus</div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button wire:click="delete" type="button" class="btn rounded-pill btn-primary"
+                        data-bs-dismiss="modal">Ya</button>
+                    <div class="btn btn-danger rounded-pill" data-bs-dismiss="modal" aria-label="Close">Tidak</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 @endif

@@ -58,7 +58,7 @@
                                     <a href="{{ url('admin/datatamu') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="{{ url('/admin/datatamu') }}"
+                                    <a href="{{ url('/admin/reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
                                         <span class="d-none d-sm-inline">Laporan</span></a>
                                     <a href="{{ route('setting') }}"
@@ -76,7 +76,7 @@
 
             {{-- card --}}
             <div class="col-10">
-                <livewire:admin.components.dashboard/>
+                <livewire:admin.components.dashboard />
                 {{-- cart --}}
                 <div class="row row-cols-sm-12">
                     <div class="col-6">
