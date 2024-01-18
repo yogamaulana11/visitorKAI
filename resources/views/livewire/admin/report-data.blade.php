@@ -15,7 +15,7 @@
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="">
+            <a class="navbar-brand ms-4" href="#">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
 
@@ -60,7 +60,7 @@
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
                                     <a href="{{ route('reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                        <span class="d-none d-sm-inline">Export</span></a>
                                     <a href="{{ route('setting') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>
@@ -75,7 +75,7 @@
             <div class="col-10">
                 <div class="card" style="width: 20rem;">
                     <div class="card-header text-center">
-                        Laporan
+                        Export ke Excel
                     </div>
                     <div class="card-body">
                         <div class="container">
@@ -91,7 +91,7 @@
 
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button href="#" class="btn btn-success btn-sm"
-                                        type="button">Generate</button>
+                                        type="button">Konfirmasi</button>
                                 </div>
                             </form>
                         </div>

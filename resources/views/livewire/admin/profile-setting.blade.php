@@ -14,7 +14,7 @@
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="">
+            <a class="navbar-brand ms-4" href="#">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
 
@@ -59,7 +59,7 @@
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
                                     <a href="{{ route('reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                        <span class="d-none d-sm-inline">Export</span></a>
                                     <a href="{{ route('setting') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>
@@ -99,7 +99,7 @@
                                         <label class="form-label">Nomor Telpon</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label class="form-label">Unit</label>
                                         <select class="form-select" id="">
                                             <option value="1">Pilih</option>
@@ -108,7 +108,7 @@
                                             <option value="3">Unit 3</option>
                                             <option value="4">Unit 4</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4 mt-4">
                                         <button class="btn me-md-2 text-white"
                                             style="background-color: #2D2A70">Batal</button>

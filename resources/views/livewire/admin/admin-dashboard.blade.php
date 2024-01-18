@@ -15,7 +15,7 @@
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="">
+            <a class="navbar-brand ms-4" href="#">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
 
@@ -60,7 +60,7 @@
                                         <span class="d-none d-sm-inline">Buku Tamu</span></a>
                                     <a href="{{ url('/admin/reportdata') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                        <span class="d-none d-sm-inline">Laporan</span></a>
+                                        <span class="d-none d-sm-inline">Export</span></a>
                                     <a href="{{ route('setting') }}"
                                         class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                         <span class="d-none d-sm-inline">Pengaturan</span></a>

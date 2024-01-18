@@ -12,7 +12,7 @@
     </style>
 
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand ms-4" href="/">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
@@ -20,7 +20,7 @@
             {{-- button login login redirect with icon --}}
 
             <div class="me-4">
-                <a href="{{ route('adminlogin') }}" class="btn text-dark rounded-pill fw-semibold">Masuk</a>
+                <a href="{{ route('adminlogin') }}" class="btn text-dark rounded-pill">Masuk</a>
             </div>
         </div>
     </nav>
@@ -52,8 +52,8 @@
                                 <label class="form-label">Role</label>
                                 <select wire:model="role" class="form-select" id="">
                                     <option value="">Pilih</option>
-                                    <option value="admin">Unit 1</option>
-                                    <option value="pegawai">Unit 2</option>
+                                    <option value="admin">Manager</option>
+                                    <option value="pegawai">Admin Unit</option>
                                 </select>
                             </div>
                             <div class="mb-2">

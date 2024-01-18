@@ -17,12 +17,17 @@
                 /* Sesuaikan dengan tinggi maksimum yang diinginkan */
                 overflow-y: auto;
             }
+
+            .pagination .page-link,
+            .form-select {
+                color: black;
+            }
         </style>
 
         {{-- navbar --}}
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand ms-4" href="">
+                <a class="navbar-brand ms-4" href="#">
                     <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
                 </a>
 
@@ -67,7 +72,7 @@
                                             <span class="d-none d-sm-inline">Buku Tamu</span></a>
                                         <a href="{{ route('reportdata') }}"
                                             class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                            <span class="d-none d-sm-inline">Laporan</span></a>
+                                            <span class="d-none d-sm-inline">Export</span></a>
                                         <a href="{{ route('setting') }}"
                                             class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
                                             <span class="d-none d-sm-inline">Pengaturan</span></a>
@@ -120,28 +125,94 @@
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button wire:click="showForm1('{{ $this->id_tamu }}')" class="btn btn-danger">Batal</button>
+                                            <button wire:click="showForm1('{{ $this->id_tamu }}')"
+                                                class="btn btn-danger">Batal</button>
                                             <button wire:click='keteranganTolak' class="btn btn-success">Kirim</button>
                                         </div>
                                     </div>
                                 @else
                                     <div>
-                                        <div class="container mt-3 table-responsive" wire:poll.5s>
-                                            <h4 class="mb-4">Daftar Tamu</h4>
+                                        <div class="container mt-3 table-responsive" wire:poll.30s>
+                                            <h4 class="mb-4">Buku Tamu</h4>
                                             {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
                                             {{-- @if ($showform)
-                        testing
-                    @else --}}
+                                            testing
+                                            @else --}}
+
+                                            {{-- search --}}
+                                            <nav class="navbar navbar-expand-lg navbar-light">
+
+                                                <!-- Navbar Toggle Button for Mobile View -->
+                                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                                                    aria-expanded="false" aria-label="Toggle navigation">
+                                                    <span class="navbar-toggler-icon"></span>
+                                                </button>
+
+                                                <!-- Navbar Content -->
+                                                <div class="collapse navbar-collapse" id="navbarNav">
+                                                    <ul class="navbar-nav me-auto">
+                                                        <!-- Nav Item 1: Pagination Dropdown -->
+                                                        <li class="nav-item">
+                                                            <div class="input-group">
+                                                                <label for="perPage"
+                                                                    class="input-group-text">Show:</label>
+                                                                <select class="form-select" id="perPage"
+                                                                    onchange="changePerPage()">
+                                                                    <option value="5">5</option>
+                                                                    <option value="10">10</option>
+                                                                </select>
+                                                            </div>
+                                                        </li>
+                                                        {{-- <li class="nav-item g-1">
+                                                            <div class="input-group">
+                                                                <label for="perBulan"
+                                                                    class="input-group-text">Bulan</label>
+                                                                <select class="form-select" id="perBulan"
+                                                                    onchange="changePerBulan()">
+                                                                    <option value="">Januari</option>
+                                                                    <option value="">Febuari</option>
+                                                                    <option value="">Maret</option>
+                                                                    <option value="">April</option>
+                                                                    <option value="">Mei</option>
+                                                                    <option value="">Juni</option>
+                                                                    <option value="">Juli</option>
+                                                                    <option value="">Agustus</option>
+                                                                    <option value="">September</option>
+                                                                    <option value="">Oktober</option>
+                                                                    <option value="">November</option>
+                                                                    <option value="">Desember</option>
+                                                                </select>
+                                                            </div>
+                                                        </li> --}}
+                                                    </ul>
+
+                                                    <ul class="navbar-nav">
+                                                        <!-- Nav Item 3: Search Input and Button -->
+                                                        <li class="nav-item">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Temukan" id="searchInput">
+                                                                <button class="btn btn-outline-secondary"
+                                                                    type="button"
+                                                                    onclick="searchTable()">Cari</button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </nav>
+                                            {{-- end search --}}
+
                                             <table class="table table-bordered caption-top">
-                                                <caption><strong>Daftar Tamu</strong></caption>
+                                                {{-- <caption><strong>Daftar Tamu</strong></caption> --}}
                                                 <thead>
                                                     <tr class="text-center">
                                                         <th scope="col">No</th>
+                                                        <th scope="col">Waktu dibuat</th>
                                                         <th scope="col">Nama</th>
                                                         <th scope="col">Kontak</th>
                                                         <th scope="col">Instansi</th>
                                                         <th scope="col">Tujuan</th>
-                                                        <th scope="col">Waktu dibuat</th>
                                                         <th scope="col">Konfirmasi</th>
                                                         <th scope="col">Aksi</th>
                                                     </tr>
@@ -150,12 +221,13 @@
                                                     <?php $n = 1; ?>
                                                     @forelse($datas as $data)
                                                         <tr>
-                                                            <th scope="row">{{ $n }}</th>
+                                                            <th scope="row" class="text-center">{{ $n }}
+                                                            </th>
+                                                            <td scope="row">{{ $data->created_at }}</td>
                                                             <td scope="row">{{ $data->nama }}</td>
                                                             <td scope="row">{{ $data->kontak }}</td>
                                                             <td scope="row">{{ $data->instansi }}</td>
                                                             <td scope="row">{{ $data->tujuan }}</td>
-                                                            <td scope="row">{{ $data->created_at }}</td>
                                                             {{-- konfirmasi --}}
                                                             <td scope="row">
                                                                 @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)
@@ -214,6 +286,28 @@
                                                 </tbody>
                                             </table>
                                             {{-- @endif --}}
+                                            {{-- Pagination --}}
+                                            <nav aria-label="Page navigation">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                            {{-- End Pagination --}}
                                         </div>
                                     </div>
                         @endif
@@ -221,6 +315,8 @@
             </div>
         </div>
     @endif
+
+
     <!-- Modal Konfirmasi -->
     <div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel"
         aria-hidden="true">
@@ -266,10 +362,10 @@
     @if ($aktifmodal)
         <div class="modal fade show" id="activeModal" tabindex="-1" aria-labelledby="activeModalLabel"
             aria-hidden="false" style="display: block;">
-            <div class="modal-dialog">
+            <div class="modal-dialog ">
                 <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title text-center" id="activeModalLabel">Apakah Anda Yakin?</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="activeModalLabel">Apakah Anda Yakin?</h5>
                         <button wire:click="toggleModal" type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -279,7 +375,7 @@
                             Data ini akan dihapus secara permanen
                         </div>
                     </div>
-                    <div class="modal-footer border-0">
+                    <div class="modal-footer">
                         <button wire:click="delete" type="button" class="btn btn-primary"
                             data-bs-dismiss="modal">Ya</button>
                         <div type="button" wire:click="toggleModal" class="btn btn-danger">Tidak</div>
