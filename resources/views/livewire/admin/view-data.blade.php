@@ -102,6 +102,10 @@
                             <li class="list-group-item" style="width:220px">{{ $tamuData->jadwal_temu }}</li>
                         </ul>
                         <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item fw-bold" style="width:175px">Jam Keluar</li>
+                            <li class="list-group-item" style="width:220px"></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
                             <li class="list-group-item fw-bold" style="width:175px">Alasan Ditolak</li>
                             <li class="list-group-item" style="width:220px">{{ $tamuData->keterangan_tolak }}</li>
                         </ul>

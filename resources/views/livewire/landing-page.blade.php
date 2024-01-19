@@ -17,9 +17,11 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
             <div class="me-4">
-                <a href="#beranda"class="btn fw-semibold text-dark rounded-pill">Beranda</a>
-                <a href="#tentang"class="btn fw-semibold text-dark rounded-pill">Tentang</a>
-                <a href="#kontak"class="btn fw-semibold text-dark rounded-pill">Kontak</a>
+                {{-- <a href="{{ url('login') }}"class="btn text-dark rounded-pill">Dashboard</a> --}}
+                {{-- <a href="{{ url('login') }}"class="btn  text-dark rounded-pill">Login</a> --}}
+                <a href="#beranda"class="btn  text-dark rounded-pill">Beranda</a>
+                <a href="#tentang"class="btn  text-dark rounded-pill">Tentang</a>
+                <a href="#kontak"class="btn  text-dark rounded-pill">Kontak</a>
             </div>
         </div>
     </nav>
@@ -39,7 +41,7 @@
                 <button class="btn text-light rounded-pill fw-semibold"
                     style="background-color: #2D2A70; border-color: #2D2A70" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
-                    Isi Keperluan
+                    Input Data
                 </button>
             </div>
             <div class="col-md-6">
@@ -92,7 +94,7 @@
                 <div class="modal-body">
                     <form wire:submit.prevent='buatKeperluan'>
                         <div class="mb-3">
-                            <label class="form-label">Nama Anda</label>
+                            <label class="form-label">Nama</label>
                             <input type="text" wire:model='nama' class="form-control">
                             @error('nama')
                                 <span class="text-danger">{{ $message }}</span>

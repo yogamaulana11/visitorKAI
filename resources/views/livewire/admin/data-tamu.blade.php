@@ -215,6 +215,7 @@
                                                         <th scope="col">Tujuan</th>
                                                         <th scope="col">Konfirmasi</th>
                                                         <th scope="col">Aksi</th>
+                                                        <th scope="col">Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -259,6 +260,7 @@
                                                                     </div>
                                                                 @endif
                                                             </td>
+                                                            {{-- end konfirmasi --}}
                                                             <td scope="col">
                                                                 <div
                                                                     class="col d-grid gap-2 d-md-flex justify-content-md-center">
@@ -275,6 +277,20 @@
                                                                         type="button" class="btn btn-sm btn-danger">
                                                                         Hapus</div>
                                                                 </div>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <div
+                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                    <button
+                                                                        class="btn btn-sm btn-warning text-white">Keluar</button>
+                                                                    <button class="btn btn-sm btn-success text-white"
+                                                                        disabled>Selesai</button>
+                                                                </div>
+                                                                {{-- <div
+                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                    <button class="btn btn-sm btn-danger"
+                                                                        disabled>Keluar</button>
+                                                                </div> --}}
                                                             </td>
                                                         </tr>
                                                         <?php $n++; ?>

@@ -15,6 +15,7 @@ use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
 use App\Livewire\Admin\ProfileSetting;
 use App\Livewire\Admin\ViewData;
+use App\Livewire\Auth\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,5 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', LandingPage::class)->name(LandingPage::class);
 Route::get('login', Login::class)->name('login');
+Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('register', Register::class)->name('register');
