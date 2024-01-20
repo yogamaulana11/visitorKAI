@@ -20,8 +20,14 @@
                 {{-- <a href="{{ url('login') }}"class="btn text-dark rounded-pill">Dashboard</a> --}}
                 {{-- <a href="{{ url('login') }}"class="btn  text-dark rounded-pill">Login</a> --}}
                 <a href="#beranda"class="btn  text-dark rounded-pill">Beranda</a>
+                <a href="/user/dashboard"class="btn  text-dark rounded-pill">Data</a>
                 <a href="#tentang"class="btn  text-dark rounded-pill">Tentang</a>
                 <a href="#kontak"class="btn  text-dark rounded-pill">Kontak</a>
+                @guest
+                    <a href="/login" class="btn  text-dark rounded-pill">Login</a>
+                @else
+                    <a href="#logout" wire:click="logout" class="btn  text-dark rounded-pill">Logout</a>
+                @endguest
             </div>
         </div>
     </nav>
@@ -38,11 +44,18 @@
                 <h4 class="fw-semibold mt-3">PT. Kereta Api Indonesia (persero) Divre III</h4>
                 <h4 class="fw-semibold mt-3">Palembang</h4>
                 <p class="fs-5">Jika anda mempunyai keperluan, Silahkan lakukan<br> pengisian data</p>
-                <button class="btn text-light rounded-pill fw-semibold"
-                    style="background-color: #2D2A70; border-color: #2D2A70" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    Input Data
-                </button>
+                @guest
+                    <a href="{{ url('login') }}" class="btn text-light rounded-pill fw-semibold"
+                        style="background-color: #2D2A70; border-color: #2D2A70">
+                        Input Data
+                    </a>
+                @else
+                    <button class="btn text-light rounded-pill fw-semibold"
+                        style="background-color: #2D2A70; border-color: #2D2A70" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Input Data
+                    </button>
+                @endguest
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('assets/img/kereta.jpg') }}" alt="" class="img-fluid" height="240"
@@ -93,7 +106,7 @@
                 </div>
                 <div class="modal-body">
                     <form wire:submit.prevent='buatKeperluan'>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Nama</label>
                             <input type="text" wire:model='nama' class="form-control">
                             @error('nama')
@@ -106,7 +119,7 @@
                             @error('kontak')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <label class="form-label">Perusahaan/Instansi</label>
                             <input type="text" wire:model='instansi' class="form-control">

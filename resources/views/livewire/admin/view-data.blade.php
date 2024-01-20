@@ -28,7 +28,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                        <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                        <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
                     </ul>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         </ul>
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item fw-bold" style="width:175px">Jam Keluar</li>
-                            <li class="list-group-item" style="width:220px"></li>
+                            <li class="list-group-item" style="width:220px">{{ $tamuData->waktu_keluar }}</li>
                         </ul>
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item fw-bold" style="width:175px">Alasan Ditolak</li>

@@ -38,20 +38,26 @@
             <div class="container border border-dark rounded" style="width: 500px; height: 410px;">
                 <h2 class="text-center mb-2 mt-2">Daftar</h2>
                 <div class="">
-                    <form class="">
+                    <form class="" wire:submit.prevent="register">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nama</label>
+                            <input wire:model="name" type="text" class="form-control" id=""
+                                placeholder="Masukan Email Anda">
+                        </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="" placeholder="Masukan Email Anda">
+                            <input wire:model="email" type="email" class="form-control" id=""
+                                placeholder="Masukan Email Anda">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control" id=""
+                            <input wire:model="kontak" type="text" class="form-control" id=""
                                 placeholder="Masukan Nomor Telepon Anda">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Password</label>
-                            <input id="myInput" wire:model='password' type="password" class="form-control"
-                                placeholder="Masukan Password Anda">
+                            <input wire:model="password" id="myInput" wire:model='password' type="password"
+                                class="form-control" placeholder="Masukan Password Anda">
                         </div>
                         <div class="mb-3">
                             <div class="form-check">

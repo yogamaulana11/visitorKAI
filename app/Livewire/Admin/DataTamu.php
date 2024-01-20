@@ -3,21 +3,25 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Datatamu as TamuData;
 
 class DataTamu extends Component
 {
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
     public $nama;
     public $kontak;
     public $instansi;
     public $tujuan;
-    public $datas;
     public $jam_buat;
     public $keperluan;
     public $id_tamu;
     public $keterangan_tolak;
     public $show_edit = false;
-    public $take = +10;
+    public $take = 5;
     public $showform = false;
     public $showform1 = false;
     public $detail_data = false;
@@ -26,13 +30,36 @@ class DataTamu extends Component
     public $_instance;
     public $ID;
     public $aktifmodal = false;
+    public $search;
+    public $showform2;
+    public $waktu_keluar;
+
 
     public function render()
     {
         $data = TamuData::latest();
-        $this->datas = $data->take($this->take)->get();
+        if ($this->search) {
+            // search nama, kontak, instansi, tujuan
+            $this->resetPage();
+            $data = $data->where('nama', 'like', '%' . $this->search . '%')
+                ->orWhere('kontak', 'like', '%' . $this->search . '%')
+                ->orWhere('instansi', 'like', '%' . $this->search . '%')
+                ->orWhere('tujuan', 'like', '%' . $this->search . '%')
+                ->orWhere('keperluan', 'like', '%' . $this->search . '%');
+        }
         $this->cToday = $this->jToday();
-        return view('livewire.admin.data-tamu');
+        $datas = $data->paginate($this->take);
+
+        return view('livewire.admin.data-tamu', compact('datas'));
+    }
+
+    public function waktuKeluar()
+    {
+        $d = TamuData::find($this->id_tamu);
+        $d->waktu_keluar = $this->waktu_keluar;
+        $d->save();
+        $this->dispatch('success', ['pesan' => 'Waktu keluar berhasil dibuat']);
+        $this->showform2 = !$this->showform2;
     }
 
     // pengunjung dalam 1 tahun
@@ -159,6 +186,11 @@ class DataTamu extends Component
         $this->id_tamu = $id;
         $this->showform1 = !$this->showform1;
     }
+    public function showForm2($id)
+    {
+        $this->id_tamu = $id;
+        $this->showform2 = !$this->showform2;
+    }
 
     // konfirmasi data tamu
     public function konfirTamu()
@@ -217,5 +249,11 @@ class DataTamu extends Component
         $d->delete();
         $this->aktifmodal = !$this->aktifmodal;
         $this->dispatch('success', ['pesan' => 'Data berhasil dihapus']);
+    }
+
+    public function logout()
+    {
+        auth('admin-web')->logout();
+        redirect('/');
     }
 }

@@ -26,7 +26,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -52,18 +52,27 @@
                                         class="nav-link align-middle px-0 text-white text-decoration-none"></a>
                                 </li>
                                 <li class="">
-                                    <a href="{{ url('admin/') }}"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                        <span class="d-none d-sm-inline">Dashboard</span></a>
-                                    <a href="{{ url('admin/datatamu') }}"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
-                                        <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                    <a href="{{ url('/admin/reportdata') }}"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                        <span class="d-none d-sm-inline">Export</span></a>
-                                    <a href="{{ route('setting') }}"
-                                        class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                        <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                    @if (auth('admin-web')->user()->role == 'manajer')
+                                        <a href="{{ url('admin/') }}"
+                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                            <span class="d-none d-sm-inline">Dashboard</span>
+                                        </a>
+                                    @endif
+                                    @if (auth('admin-web')->user()->role == 'admin' || auth('admin-web')->user()->role == 'super-admin')
+                                        <a href="{{ url('admin/') }}"
+                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                            <span class="d-none d-sm-inline">Dashboard</span>
+                                        </a>
+                                        <a href="{{ url('admin/datatamu') }}"
+                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
+                                            <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                        <a href="{{ url('/admin/reportdata') }}"
+                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                            <span class="d-none d-sm-inline">Export</span></a>
+                                        <a href="{{ route('setting') }}"
+                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                            <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                    @endif
                                 </li>
                             </ul>
                         </div>

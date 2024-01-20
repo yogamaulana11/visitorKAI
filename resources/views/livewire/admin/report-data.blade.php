@@ -26,7 +26,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
                 </ul>
             </div>
         </div>

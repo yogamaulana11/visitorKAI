@@ -50,10 +50,11 @@
         <div class="container border border-dark rounded" style="width: 500px; height: 400px;">
             <h2 class="text-center mt-4">Login</h2>
             <div class="mt-5">
-                <form class="">
+                <form wire:submit.prevent="login" class="">
                     <div class="mb-3">
                         <label for="" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="" placeholder="Masukan Email Anda">
+                        <input wire:model="email" type="email" class="form-control" id=""
+                            placeholder="Masukan Email Anda">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Password</label>

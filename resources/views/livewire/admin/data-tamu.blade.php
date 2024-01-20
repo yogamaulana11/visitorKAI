@@ -39,7 +39,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                        <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                        <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
                     </ul>
                 </div>
             </div>
@@ -111,60 +111,85 @@
                                         <button wire:click="jadwalTemu" class="btn btn-success">Kirim</button>
                                     </div>
                                 </div>
-                            @elseif($showform1)
+                            @elseif ($showform2)
                                 <div class="col mt-4">
 
-                                    <div class="card text-center" style="width: 20rem;">
+                                    <div class="card text-center" style="width: 18rem;">
                                         <div class="card-header">
-                                            Beri Alasan
+                                            Tentukan Jadwal
                                         </div>
                                         <div class="card-body">
-                                            <div class="">
-                                                <label for="">Alasan</label>
-                                                <textarea wire:model='keterangan_tolak' type="text" class="form-control"></textarea>
+                                            <div class="card-text">
+                                                <label for="">Waktu bertemu</label>
+                                                <input wire:model='waktu_keluar' type="datetime-local"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button wire:click="showForm1('{{ $this->id_tamu }}')"
+                                            <button wire:click="showForm2('{{ $this->id_tamu }}')"
                                                 class="btn btn-danger">Batal</button>
-                                            <button wire:click='keteranganTolak' class="btn btn-success">Kirim</button>
+                                            <button wire:click="waktuKeluar" class="btn btn-success">Kirim</button>
                                         </div>
                                     </div>
-                                @else
-                                    <div>
-                                        <div class="container mt-3 table-responsive" wire:poll.30s>
-                                            <h4 class="mb-4">Buku Tamu</h4>
-                                            {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
-                                            {{-- @if ($showform)
+                                @elseif($showform1)
+                                    <div class="col mt-4">
+
+                                        <div class="card text-center" style="width: 20rem;">
+                                            <div class="card-header">
+                                                Beri Alasan
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="">
+                                                    <label for="">Alasan</label>
+                                                    <textarea wire:model='keterangan_tolak' type="text" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <button wire:click="showForm1('{{ $this->id_tamu }}')"
+                                                    class="btn btn-danger">Batal</button>
+                                                <button wire:click='keteranganTolak'
+                                                    class="btn btn-success">Kirim</button>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div>
+                                            <div class="container mt-3 table-responsive" wire:poll>
+                                                <h4 class="mb-4">Buku Tamu</h4>
+                                                {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
+                                                {{-- @if ($showform)
                                             testing
                                             @else --}}
 
-                                            {{-- search --}}
-                                            <nav class="navbar navbar-expand-lg navbar-light">
+                                                {{-- search --}}
+                                                <nav class="navbar navbar-expand-lg navbar-light">
 
-                                                <!-- Navbar Toggle Button for Mobile View -->
-                                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#navbarNav" aria-controls="navbarNav"
-                                                    aria-expanded="false" aria-label="Toggle navigation">
-                                                    <span class="navbar-toggler-icon"></span>
-                                                </button>
-
-                                                <!-- Navbar Content -->
-                                                <div class="collapse navbar-collapse" id="navbarNav">
-                                                    <ul class="navbar-nav me-auto">
-                                                        <!-- Nav Item 1: Pagination Dropdown -->
-                                                        <li class="nav-item">
-                                                            <div class="input-group">
-                                                                <label for="perPage"
-                                                                    class="input-group-text">Show:</label>
-                                                                <select class="form-select" id="perPage"
-                                                                    onchange="changePerPage()">
-                                                                    <option value="5">5</option>
-                                                                    <option value="10">10</option>
-                                                                </select>
-                                                            </div>
-                                                        </li>
-                                                        {{-- <li class="nav-item g-1">
+                                                    <!-- Navbar Toggle Button for Mobile View -->
+                                                    <button class="navbar-toggler" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                                        aria-controls="navbarNav" aria-expanded="false"
+                                                        aria-label="Toggle navigation">
+                                                        <span class="navbar-toggler-icon"></span>
+                                                    </button>
+                                                    <!-- Navbar Content -->
+                                                    <div class="collapse navbar-collapse" id="navbarNav">
+                                                        <ul class="navbar-nav me-auto">
+                                                            <!-- Nav Item 1: Pagination Dropdown -->
+                                                            <li class="nav-item">
+                                                                <div class="input-group">
+                                                                    <label for="perPage"
+                                                                        class="input-group-text">Show:</label>
+                                                                    <select wire:model="take" class="form-select"
+                                                                        id="perPage">
+                                                                        @if ($search)
+                                                                            <option value="50000">All</option>
+                                                                        @else
+                                                                            <option value="5">5</option>
+                                                                            <option value="10">10</option>
+                                                                        @endif
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                            {{-- <li class="nav-item g-1">
                                                             <div class="input-group">
                                                                 <label for="perBulan"
                                                                     class="input-group-text">Bulan</label>
@@ -185,125 +210,177 @@
                                                                 </select>
                                                             </div>
                                                         </li> --}}
-                                                    </ul>
+                                                        </ul>
 
-                                                    <ul class="navbar-nav">
-                                                        <!-- Nav Item 3: Search Input and Button -->
-                                                        <li class="nav-item">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Temukan" id="searchInput">
-                                                                <button class="btn btn-outline-secondary"
-                                                                    type="button"
-                                                                    onclick="searchTable()">Cari</button>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </nav>
-                                            {{-- end search --}}
+                                                        <ul class="navbar-nav">
+                                                            <!-- Nav Item 3: Search Input and Button -->
+                                                            <li class="nav-item">
+                                                                <div class="input-group">
+                                                                    <input wire:model="search" type="text"
+                                                                        class="form-control" placeholder="Temukan"
+                                                                        id="searchInput">
+                                                                    <button class="btn btn-outline-secondary"
+                                                                        type="button">Cari</button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                                {{-- end search --}}
 
-                                            <table class="table table-bordered caption-top">
-                                                {{-- <caption><strong>Daftar Tamu</strong></caption> --}}
-                                                <thead>
-                                                    <tr class="text-center">
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Waktu dibuat</th>
-                                                        <th scope="col">Nama</th>
-                                                        <th scope="col">Kontak</th>
-                                                        <th scope="col">Instansi</th>
-                                                        <th scope="col">Tujuan</th>
-                                                        <th scope="col">Konfirmasi</th>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php $n = 1; ?>
-                                                    @forelse($datas as $data)
-                                                        <tr>
-                                                            <th scope="row" class="text-center">{{ $n }}
-                                                            </th>
-                                                            <td scope="row">{{ $data->created_at }}</td>
-                                                            <td scope="row">{{ $data->nama }}</td>
-                                                            <td scope="row">{{ $data->kontak }}</td>
-                                                            <td scope="row">{{ $data->instansi }}</td>
-                                                            <td scope="row">{{ $data->tujuan }}</td>
-                                                            {{-- konfirmasi --}}
-                                                            <td scope="row">
-                                                                @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)
-                                                                    {{-- sembunyikan --}}
-                                                                    @if ($data->jadwal_temu)
-                                                                        <div
-                                                                            class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                            <button class="btn btn-sm btn-success"
-                                                                                disabled>Diterima</button>
-                                                                        </div>
-                                                                    @elseif($data->keterangan_tolak)
-                                                                        <div
-                                                                            class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                <table class="table table-bordered caption-top">
+                                                    {{-- <caption><strong>Daftar Tamu</strong></caption> --}}
+                                                    <thead>
+                                                        <tr class="text-center">
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">Waktu dibuat</th>
+                                                            <th scope="col">Nama</th>
+                                                            <th scope="col">Kontak</th>
+                                                            <th scope="col">Instansi</th>
+                                                            <th scope="col">Tujuan</th>
+                                                            {{-- admin --}}
+                                                            @if (auth('admin-web')->user()->role == 'super-admin')
+                                                                <th scope='col'>Konfirmasi</th>
+                                                                <th scope="col">Aksi</th>
+                                                            @else
+                                                                {{-- superadmin --}}
+                                                                <th scope="col">status</th>
+                                                                <th scope="col">Aksi</th>
+                                                                <th scope="col">Konfirmasi</th>
+                                                            @endif
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php $n = 0; ?>
+
+                                                        @forelse($datas as $data)
+                                                            <tr>
+                                                                <th scope="row" class="text-center">
+                                                                    {{ ($datas->currentpage() - 1) * $datas->perpage() + $n + 1 }}
+                                                                </th>
+                                                                <td scope="row">{{ $data->created_at }}</td>
+                                                                <td scope="row">{{ $data->nama }}</td>
+                                                                <td scope="row">{{ $data->kontak }}</td>
+                                                                <td scope="row">{{ $data->instansi }}</td>
+                                                                <td scope="row">{{ $data->tujuan }}</td>
+                                                                {{-- konfirmasi --}}
+                                                                <td scope="row">
+                                                                    @if (auth('admin-web')->user()->role == 'admin')
+                                                                        @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)
+                                                                            {{-- sembunyikan --}}
+                                                                            @if ($data->jadwal_temu)
+                                                                                <div
+                                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                                    <button
+                                                                                        class="btn btn-sm btn-success"
+                                                                                        disabled>Diterima</button>
+                                                                                </div>
+                                                                            @elseif($data->keterangan_tolak)
+                                                                                <div
+                                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                                    <button type="button"
+                                                                                        class="btn btn-sm btn-danger"
+                                                                                        disabled>Ditolak</button>
+                                                                                </div>
+                                                                            @endif
+                                                                        @else
                                                                             <button type="button"
-                                                                                class="btn btn-sm btn-danger"
-                                                                                disabled>Ditolak</button>
-                                                                        </div>
+                                                                                class="btn btn-sm btn-warning"
+                                                                                disabled>Belum di konfirmasi</button>
+                                                                        @endif
+                                                                    @else
+                                                                        @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)
+                                                                            {{-- sembunyikan --}}
+                                                                            @if ($data->jadwal_temu)
+                                                                                <div
+                                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                                    <button
+                                                                                        class="btn btn-sm btn-success"
+                                                                                        disabled>Selesai</button>
+                                                                                </div>
+                                                                            @elseif($data->keterangan_tolak)
+                                                                                <div
+                                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                                    <button type="button"
+                                                                                        class="btn btn-sm btn-danger"
+                                                                                        disabled>Ditolak</button>
+                                                                                </div>
+                                                                            @endif
+                                                                        @else
+                                                                            <div
+                                                                                class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                                                                <button
+                                                                                    wire:click="showForm({{ $data->id }})"
+                                                                                    class="btn btn-sm btn-success">Terima</button>
+                                                                                <button
+                                                                                    wire:click='showForm1({{ $data->id }})'
+                                                                                    class="btn btn-sm btn-danger">
+                                                                                    Tolak</button>
+                                                                            </div>
+                                                                        @endif
                                                                     @endif
-                                                                @else
-                                                                    <div
-                                                                        class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                                                        <button
-                                                                            wire:click="showForm({{ $data->id }})"
-                                                                            class="btn btn-sm btn-success">Terima</button>
-                                                                        <button
-                                                                            wire:click='showForm1({{ $data->id }})'
-                                                                            class="btn btn-sm btn-danger">
-                                                                            Tolak</button>
-                                                                    </div>
-                                                                @endif
-                                                            </td>
-                                                            {{-- end konfirmasi --}}
-                                                            <td scope="col">
-                                                                <div
-                                                                    class="col d-grid gap-2 d-md-flex justify-content-md-center">
-                                                                    <div wire:click="detailData('{{ $data->id }}')"
-                                                                        type="button" class="btn btn-sm btn-primary">
-                                                                        Lihat</div>
+                                                                </td>
+                                                                {{-- end konfirmasi --}}
 
-                                                                    <div wire:click="showEdit('{{ $data->id }}')"
-                                                                        type="button"
-                                                                        class="btn btn-sm btn-secondary">
-                                                                        Edit
+                                                                <td scope="col">
+                                                                    <div
+                                                                        class="col d-grid gap-2 d-md-flex justify-content-md-center">
+                                                                        <div wire:click="detailData('{{ $data->id }}')"
+                                                                            type="button"
+                                                                            class="btn btn-sm btn-primary">
+                                                                            Lihat</div>
+                                                                        @if (auth('admin-web')->user()->role == 'admin')
+                                                                            <div wire:click="showEdit('{{ $data->id }}')"
+                                                                                type="button"
+                                                                                class="btn btn-sm btn-secondary">
+                                                                                Edit
+                                                                            </div>
+                                                                            <div wire:click="hapusTamu('{{ $data->id }}')"
+                                                                                type="button"
+                                                                                class="btn btn-sm btn-danger">
+                                                                                Hapus</div>
+                                                                        @endif
                                                                     </div>
-                                                                    <div wire:click="hapusTamu('{{ $data->id }}')"
-                                                                        type="button" class="btn btn-sm btn-danger">
-                                                                        Hapus</div>
-                                                                </div>
-                                                            </td>
-                                                            <td scope="row">
-                                                                <div
-                                                                    class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                    <button
-                                                                        class="btn btn-sm btn-warning text-white">Keluar</button>
-                                                                    <button class="btn btn-sm btn-success text-white"
-                                                                        disabled>Selesai</button>
-                                                                </div>
-                                                                {{-- <div
+                                                                </td>
+                                                                @if (auth('admin-web')->user()->role == 'admin')
+                                                                    <td scope="row">
+                                                                        <div
+                                                                            class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                            <button
+                                                                                class="btn btn-sm btn-warning text-white"
+                                                                                wire:click="showForm2('{{ $data->id }}')">Keluar</button>
+                                                                            <button
+                                                                                class="btn btn-sm btn-success text-white"
+                                                                                disabled>Selesai</button>
+                                                                        </div>
+                                                                        {{-- <div
                                                                     class="d-grip gap-2 d-md-flex justify-content-md-center">
                                                                     <button class="btn btn-sm btn-danger"
                                                                         disabled>Keluar</button>
                                                                 </div> --}}
-                                                            </td>
-                                                        </tr>
-                                                        <?php $n++; ?>
-                                                    @empty
-                                                        <tr>
-                                                            <td colspan="8" class="text-center">Tidak ada data</td>
-                                                        </tr>
-                                                    @endforelse
-                                                </tbody>
-                                            </table>
-                                            {{-- @endif --}}
-                                            {{-- Pagination --}}
-                                            <nav aria-label="Page navigation">
+                                                                    </td>
+                                                                @endif
+                                                            </tr>
+                                                            <?php $n++; ?>
+                                                        @empty
+                                                            <tr>
+                                                                <td colspan="8" class="text-center">Tidak ada data
+                                                                </td>
+                                                            </tr>
+                                                        @endforelse
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <td colspan="8">
+                                                            {{-- @if ($search) --}}
+                                                            {{-- @else --}}
+                                                            {!! $datas->render() !!}
+                                                            {{-- @endif --}}
+                                                        </td>
+                                                    </tfoot>
+                                                </table>
+                                                {{-- @endif --}}
+                                                {{-- Pagination --}}
+                                                {{-- <nav aria-label="Page navigation">
                                                 <ul class="pagination">
                                                     <li class="page-item">
                                                         <a class="page-link" href="#" aria-label="Previous">
@@ -322,10 +399,10 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </nav>
-                                            {{-- End Pagination --}}
+                                            </nav> --}}
+                                                {{-- End Pagination --}}
+                                            </div>
                                         </div>
-                                    </div>
                         @endif
                     </div>
             </div>

@@ -18,7 +18,7 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
             <div class="me-4">
-                <a href="{{ route('adminlogin') }}" class="btn text-dark rounded-pill fw-normal">Masuk</a>
+                <a wire:click="logout" class="btn text-dark rounded-pill fw-normal">Masuk</a>
             </div>
         </div>
     </nav>

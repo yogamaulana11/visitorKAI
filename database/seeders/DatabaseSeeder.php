@@ -21,10 +21,28 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         DB::table('admins')->insert([
-            'nipp'=>'123123',
-            'no_telp'=>'082212341234',
-            'role'=>'admin',
-            'password'=>Hash::make('123123123')
+            'nipp' => 'admin-unit',
+            'no_telp' => '082212341234',
+            'role' => 'super-admin',
+            'password' => Hash::make('admin123')
+        ]);
+        DB::table('admins')->insert([
+            'nipp' => 'admin',
+            'no_telp' => '082212341235',
+            'role' => 'admin',
+            'password' => Hash::make('admin123')
+        ]);
+        DB::table('admins')->insert([
+            'nipp' => 'manajer',
+            'no_telp' => '082212341236',
+            'role' => 'manajer',
+            'password' => Hash::make('manajer123')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Test User',
+            'email' => 'user@gmail.com',
+            'kontak' => '082212341237',
+            'password' => Hash::make('user123'),
         ]);
     }
 }

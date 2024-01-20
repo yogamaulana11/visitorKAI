@@ -10,4 +10,10 @@ class Dashboard extends Component
     {
         return view('livewire.auth.dashboard');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/');
+    }
 }

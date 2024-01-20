@@ -20,7 +20,7 @@
             {{-- button login login redirect with icon --}}
 
             <div class="me-4">
-                <a href="{{ route('adminlogin') }}" class="btn text-dark rounded-pill">Masuk</a>
+                <a wire:click="logout" class="btn text-dark rounded-pill">Masuk</a>
             </div>
         </div>
     </nav>
@@ -72,8 +72,8 @@
                     </form>
                     <div class="mb-2">
                         <p class="text-center">
-                        <p class="text-center">Sudah punya akun? <a href="{{ route('adminlogin') }}"
-                                class="text-center">Masuk</a></p>
+                        <p class="text-center">Sudah punya akun? <a wire:click="logout" class="text-center">Masuk</a>
+                        </p>
                         </p>
                     </div>
                 </div>

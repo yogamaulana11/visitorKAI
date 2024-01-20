@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nipp')->unique();
             $table->string('no_telp')->unique();
-            $table->enum('role', ['admin', 'pegawai', 'it support', 'sdm']);
+            $table->enum('role', ['super-admin', 'admin', 'manajer']);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

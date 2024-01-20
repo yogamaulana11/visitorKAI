@@ -17,9 +17,17 @@
                     <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
                 </a>
                 <div class="me-4">
-                    {{-- <a href="#dashboard"class="btn fw-semibold text-dark rounded-pill">Dashboard</a> --}}
-                    <a href="{{ url('/') }}"class="btn fw-semibold text-dark rounded-pill">Beranda</a>
-                    <a href="{{ url('login') }}"class="btn fw-semibold text-dark rounded-pill">Keluar</a>
+                    {{-- <a href="{{ url('login') }}"class="btn text-dark rounded-pill">Dashboard</a> --}}
+                    {{-- <a href="{{ url('login') }}"class="btn  text-dark rounded-pill">Login</a> --}}
+                    <a href="/user"class="btn  text-dark rounded-pill">Beranda</a>
+                    <a href="/user/dashboard"class="btn  text-dark rounded-pill">Data</a>
+                    <a href="#tentang"class="btn  text-dark rounded-pill">Tentang</a>
+                    <a href="#kontak"class="btn  text-dark rounded-pill">Kontak</a>
+                    @guest
+                        <a href="/login" class="btn  text-dark rounded-pill">Login</a>
+                    @else
+                        <a href="#logout" wire:click="logout" class="btn  text-dark rounded-pill">Logout</a>
+                    @endguest
                 </div>
             </div>
         </nav>

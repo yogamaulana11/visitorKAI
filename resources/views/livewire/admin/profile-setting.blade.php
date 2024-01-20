@@ -26,7 +26,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" href="{{ route('adminlogin') }}">Keluar</a></li>
+                    <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -78,7 +78,7 @@
                                 <div class="border"></div>
                             </h3>
                             <div class="container mx-auto">
-                                <form>
+                                <form wire:submit.prevent="updateProfile">
                                     <div class="">
                                         <div class="mb-3">
                                             <div class="">
@@ -93,11 +93,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" style="">NIPP</label>
-                                        <input type="text" class="form-control">
+                                        <input wire:model="nipp" type="text" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Nomor Telpon</label>
-                                        <input type="text" class="form-control">
+                                        <input wire:model="no_telp" type="text" class="form-control">
                                     </div>
                                     {{-- <div class="mb-3">
                                         <label class="form-label">Unit</label>
@@ -110,8 +110,8 @@
                                         </select>
                                     </div> --}}
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4 mt-4">
-                                        <button class="btn me-md-2 text-white"
-                                            style="background-color: #2D2A70">Batal</button>
+                                        {{-- <button class="btn me-md-2 text-white"
+                                            style="background-color: #2D2A70">Batal</button> --}}
                                         <button class="btn text-white" style="background-color: #ED6B23">Simpan
                                             Perubahan</button>
                                     </div>
@@ -126,14 +126,14 @@
                                 <div class="border"></div>
                             </h3>
                             <div class="container mx-auto">
-                                <form>
+                                <form wire:submit.prevent="updatePassword">
                                     <div class="mb-3">
                                         <label class="form-label">Kata Sandi</label>
-                                        <input type="password" class="form-control">
+                                        <input wire:model="password" type="password" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Konfirmasi kata sandi</label>
-                                        <input type="password" class="form-control">
+                                        <input wire:model="konfirm" type="password" class="form-control">
                                     </div>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4 mt-4">
                                         <button class="btn me-md-2 text-white"

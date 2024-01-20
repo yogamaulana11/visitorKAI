@@ -44,7 +44,13 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+
+Route::prefix('user')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/', LandingPage::class);
+        Route::get('dashboard', Dashboard::class)->name('dashboard');
+    });
+});
 Route::get('/', LandingPage::class)->name(LandingPage::class);
 Route::get('login', Login::class)->name('login');
-Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('register', Register::class)->name('register');

@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('datatamus', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('kontak')->unique();
+            $table->string('kontak')->nullable();
             $table->string('instansi');
             $table->string('keperluan');
             $table->string('tujuan');
             $table->string('jadwal_temu')->nullable();
+            $table->string('waktu_keluar')->nullable();
             $table->string('keterangan_tolak')->nullable();
             $table->timestamps();
         });
