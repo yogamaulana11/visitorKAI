@@ -10,4 +10,9 @@ class ReportData extends Component
     {
         return view('livewire.admin.report-data');
     }
+    public function logout()
+    {
+        auth('admin-web')->logout();
+        redirect('admin/login');
+    }
 }

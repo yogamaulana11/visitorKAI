@@ -254,6 +254,6 @@ class DataTamu extends Component
     public function logout()
     {
         auth('admin-web')->logout();
-        redirect('/');
+        redirect('admin/login');
     }
 }

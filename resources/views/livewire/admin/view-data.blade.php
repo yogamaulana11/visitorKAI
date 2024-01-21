@@ -23,12 +23,12 @@
                 <div class="dropdown me-4">
                     <button class="btn  rounded-pill text-black" data-bs-toggle="dropdown">
                         Administrator
-                        <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}"
-                            height="20">
+                        {{-- <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}"
+                            height="20"> --}}
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                        <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
+                        <li><a class="dropdown-item text-black btn" wire:click="logout">Keluar</a></li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                     <h2>Detail Data Tamu</h2>
                     <div>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item fw-bold" style="width:175px">Nama lengkap</li>
+                            <li class="list-group-item fw-bold" style="width:175px">Nama</li>
                             <li class="list-group-item" style="width:220px">{{ $tamuData->nama }}</li>
                         </ul>
                         <ul class="list-group list-group-horizontal">

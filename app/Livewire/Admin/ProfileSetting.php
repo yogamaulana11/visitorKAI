@@ -22,7 +22,7 @@ class ProfileSetting extends Component
     public function logout()
     {
         auth('admin-web')->logout();
-        return redirect('/');
+        return redirect('admin/login');
     }
 
     public function mount()

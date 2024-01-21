@@ -34,7 +34,7 @@ class AdminDashboard extends Component
     public function logout()
     {
         auth('admin-web')->logout();
-        redirect('/');
+        redirect('admin/login');
     }
     // january
     public function onMonth($param)

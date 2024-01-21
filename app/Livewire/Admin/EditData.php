@@ -10,4 +10,9 @@ class EditData extends Component
     {
         return view('livewire.admin.edit-data');
     }
+    public function logout()
+    {
+        auth('admin-web')->logout();
+        redirect('admin/login');
+    }
 }

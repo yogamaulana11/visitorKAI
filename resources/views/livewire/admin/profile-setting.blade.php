@@ -21,12 +21,12 @@
             <div class="dropdown me-4">
                 <button class="btn  rounded-pill text-black" data-bs-toggle="dropdown">
                     Administrator
-                    <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20"
-                        alt="profile.png">
+                    {{-- <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20"
+                        alt="profile.png"> --}}
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-black" href="{{ route('setting') }}">Pengaturan</a></li>
-                    <li><a class="dropdown-item text-black" wire:click="logout">Keluar</a></li>
+                    <li><a class="dropdown-item text-black btn" wire:click="logout">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -85,10 +85,10 @@
                                                 {{-- <img src="{{ asset('assets/img/avatar.png') }}"
                                                     class="img-fluid img-thumbnail" alt="avatar.png" style=""> --}}
                                             </div>
-                                            <div class="">
+                                            {{-- <div class="">
                                                 <label for="formFile" class="form-label">Upload Foto</label>
                                                 <input class="form-control" type="file" id="formFile">
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                     <div class="mb-3">

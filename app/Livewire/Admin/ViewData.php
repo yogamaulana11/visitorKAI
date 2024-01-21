@@ -20,4 +20,9 @@ class ViewData extends Component
     {
         $this->tamuData = Datatamu::find($ID);
     }
+    public function logout()
+    {
+        auth('admin-web')->logout();
+        redirect('admin/login');
+    }
 }
