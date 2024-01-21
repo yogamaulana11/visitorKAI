@@ -120,9 +120,8 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="card-text">
-                                                <label for="">Waktu bertemu</label>
-                                                <input wire:model='waktu_keluar' type="datetime-local"
-                                                    class="form-control">
+                                                <label for="">Waktu Keluar</label>
+                                                <input wire:model='waktu_keluar' type="time" class="form-control">
                                             </div>
                                         </div>
                                         <div class="card-footer">

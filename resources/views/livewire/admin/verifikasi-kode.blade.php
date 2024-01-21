@@ -10,7 +10,7 @@
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
             <div class="me-4">
-                <a href="#" class="btn rounded-pill text-dark">
+                <a href="{{ route('adminlogin') }}" class="btn rounded-pill text-dark">
                     Masuk
                 </a>
             </div>
