@@ -153,7 +153,7 @@
                                         </div>
                                     @else
                                         <div>
-                                            <div class="container mt-3 table-responsive" wire:poll>
+                                            <div class="container mt-3 table-responsive" wire:poll.5s>
                                                 <h4 class="mb-4">Buku Tamu</h4>
                                                 {{-- <div wire:click="showForm" class="btn">auto Refresh</div> --}}
                                                 {{-- @if ($showform)
@@ -349,12 +349,15 @@
                                                                     <td scope="row">
                                                                         <div
                                                                             class="d-grip gap-2 d-md-flex justify-content-md-center">
-                                                                            <button
-                                                                                class="btn btn-sm btn-warning text-white"
-                                                                                wire:click="showForm2('{{ $data->id }}')">Keluar</button>
-                                                                            <button
-                                                                                class="btn btn-sm btn-success text-white"
-                                                                                disabled>Selesai</button>
+                                                                            @if ($data->waktu_keluar == null)
+                                                                                <button
+                                                                                    class="btn btn-sm btn-warning text-white"
+                                                                                    wire:click="showForm2('{{ $data->id }}')">Keluar</button>
+                                                                            @else
+                                                                                <button
+                                                                                    class="btn btn-sm btn-success text-white"
+                                                                                    disabled>Selesai</button>
+                                                                            @endif
                                                                         </div>
                                                                         {{-- <div
                                                                     class="d-grip gap-2 d-md-flex justify-content-md-center">

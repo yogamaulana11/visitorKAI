@@ -42,7 +42,7 @@
                             Total
                         </div>
                         <div class="card-body">
-                            <div class="card-text">120</div>
+                            <div class="card-text">{{ $count_data ?? 0 }}</div>
                         </div>
                         <div class="card-footer">
                             Tamu Berkunjung
@@ -58,29 +58,47 @@
             <div class="table-responsive">
                 <table class="table table-bordered border-dark">
                     <thead class="text-white text-center" style="background-color: #ED6B23">
+
                         <tr>
                             <th>No</th>
-                            <th>Waktu dibuat</th>
+                            <th>Tanggal/Jam</th>
                             <th>Jam Keluar</th>
                             <th>Keterangan</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        <tr>
-                            <td>1</td>
-                            <td>2024-01-20 10:00</td>
-                            <td>17:00</td>
-                            <td>Jika ditolak ambil dari alasan</td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                    <button class="btn btn-sm btn-success" disabled>Diterima</button>
-                                    <button class="btn btn-sm btn-danger" disabled>Ditolak</button>
-                                </div>
-                            </td>
-                        </tr>
+                        @forelse ($datas as $data)
+                            {{-- @dd($data) --}}
+                            <tr>
+                                <td>{{ ($datas->currentpage() - 1) * $datas->perpage() + $n + 1 }}</td>
+                                <td>{{ $data->jadwal_temu }}</td>
+                                <td>{{ $data->waktu_keluar }}</td>
+                                <td>{{ $data->keterangan_tolak }}</td>
+                                <td>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                        @if ($data->keterangan_tolak != null)
+                                            <button class="btn btn-sm btn-danger" disabled>Ditolak</button>
+                                        @elseif ($data->waktu_keluar != null)
+                                            <button class="btn btn-sm btn-success" disabled>Diterima</button>
+                                        @elseif($data->jadwal_temu != null)
+                                            <button class="btn btn-sm btn-info" disabled>Sedang diproses</button>
+                                        @else
+                                            <button class="btn btn-sm btn-warning" disabled>Belum di konfirmasi</button>
+                                        @endif
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5">Data Kosong</td>
+                            </tr>
+                        @endforelse
                         <!-- Add more rows as needed -->
                     </tbody>
+                    <tfoot>
+                        {{ $datas->render() }}
+                    </tfoot>
                 </table>
             </div>
         </div>

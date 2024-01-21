@@ -30,13 +30,13 @@ use App\Livewire\Auth\Dashboard;
 
 Route::get('admin/login', AdminLogin::class)->name('adminlogin');
 Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
+Route::get('admin/lupapassword', LupaPassword::class)->name('lupapassword');
+Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
+Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
 Route::prefix('admin')->group(function () {
     Route::middleware(['authAdmin'])->group(function () {
         Route::get('/', AdminDashboard::class);
         Route::get('datatamu', DataTamu::class);
-        Route::get('lupapassword', LupaPassword::class)->name('LupaPassword');
-        Route::get('aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
-        Route::get('verifikasikode', VerifikasiKode::class)->name('verifikasikode');
         Route::get('reportdata', ReportData::class)->name('reportdata');
         Route::get('setting', ProfileSetting::class)->name('setting');
         Route::get('viewdata', ViewData::class)->name('viewdata');

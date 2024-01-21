@@ -80,7 +80,7 @@
                     </div>
                     <div class="mb-3 form-check">
                         <p class="text-end">
-                            <a href="{{ route('LupaPassword') }}" class="text-decoration-none">Lupa Kata sandi</a>
+                            <a href={{ route('lupapassword') }} class="text-decoration-none">Lupa Kata sandi</a>
                         </p>
                     </div>
                     <button type="submit" class="btn text-light rounded-pill  "
