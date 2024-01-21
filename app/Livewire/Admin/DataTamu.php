@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin;
 
+use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Datatamu as TamuData;
@@ -38,6 +39,11 @@ class DataTamu extends Component
     public function render()
     {
         $data = TamuData::latest();
+        $startDate = Carbon::parse('2024-01-18');
+        $endDate = Carbon::parse('2024-01-21');
+
+        $posts = TamuData::whereBetween('created_at', [$startDate, $endDate])->get();
+        // @dd($posts);
         if ($this->search) {
             // search nama, kontak, instansi, tujuan
             $this->resetPage();

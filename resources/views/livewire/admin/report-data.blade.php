@@ -82,15 +82,17 @@
                             <form class="col" action="">
                                 <div class="row mb-4">
                                     <label for="date" class="">Dari</label>
-                                    <input class="form-control" type="date" id="" name="">
+                                    <input wire:model="start_date" class="form-control" type="date" id=""
+                                        name="">
                                 </div>
                                 <div class="row mb-4">
                                     <label for="date">Sampai</label>
-                                    <input class="form-control" type="date" id="" name="">
+                                    <input wire:model="end_date" class="form-control" type="date" id=""
+                                        name="">
                                 </div>
 
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button href="#" class="btn btn-success btn-sm"
+                                    <button wire:click="exportData" href="#" class="btn btn-success btn-sm"
                                         type="button">Konfirmasi</button>
                                 </div>
                             </form>
