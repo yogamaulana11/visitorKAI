@@ -32,7 +32,7 @@
                 </a>
 
                 <div class="dropdown me-4">
-                    <button class="btn  rounded-pill text-black" data-bs-toggle="dropdown">
+                    <button class="btn  rounded-pill text-black dropdown-toggle" data-bs-toggle="dropdown">
                         Administrator
                         {{-- <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}"
                             height="20"> --}}
@@ -284,9 +284,12 @@
                                                                                 </div>
                                                                             @endif
                                                                         @else
-                                                                            <button type="button"
-                                                                                class="btn btn-sm btn-warning"
-                                                                                disabled>Belum di konfirmasi</button>
+                                                                            <div
+                                                                                class="d-grip gap-2 d-md-flex justify-content-md-center">
+                                                                                <button type="button"
+                                                                                    class="btn btn-sm btn-warning text-white"
+                                                                                    disabled>Menunggu</button>
+                                                                            </div>
                                                                         @endif
                                                                     @else
                                                                         @if ($data->jadwal_temu != null || $data->keterangan_tolak !== null)

@@ -41,7 +41,7 @@
             </a>
             <div class="me-4">
                 {{-- <a href="{{ url('/') }}"class="btn text-dark rounded-pill">Beranda</a> --}}
-                {{-- <a href="{{ url('register') }}"class="btn fw-semibold text-dark rounded-pill">Registrasi</a> --}}
+                <a href="{{ url('register') }}"class="btn text-dark rounded-pill">Registrasi</a>
             </div>
         </div>
     </nav>

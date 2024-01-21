@@ -35,7 +35,7 @@
 
     <div class="py-5">
         <div class="py-5">
-            <div class="container border border-dark rounded" style="width: 500px; height: 410px;">
+            <div class="container border border-dark rounded" style="width: 500px; height: 500px;">
                 <h2 class="text-center mb-2 mt-2">Daftar</h2>
                 <div class="">
                     <form class="" wire:submit.prevent="register">
