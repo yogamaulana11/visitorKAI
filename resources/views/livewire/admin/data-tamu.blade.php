@@ -33,7 +33,7 @@
 
                 <div class="dropdown me-4">
                     <button class="btn  rounded-pill text-black dropdown-toggle" data-bs-toggle="dropdown">
-                        Administrator
+                        {{ auth('admin-web')->user()->nipp }}
                         {{-- <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}"
                             height="20"> --}}
                     </button>
@@ -102,7 +102,7 @@
                                     <div class="card-body">
                                         <div class="card-text">
                                             <label for="">Waktu bertemu</label>
-                                            <input wire:model='jadwal_temu' type="datetime-local" class="form-control">
+                                            <input wire:model='jadwal_temu' type="time" class="form-control">
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -211,6 +211,20 @@
                                                         </li> --}}
                                                         </ul>
 
+                                                        {{-- <ul class="navbar-nav">
+                                                            <!-- Nav Item 3: Search Input and Button -->
+                                                            <li class="nav-item">
+                                                                <div class="input-group">
+                                                                    <form wire:submit.prevent="upload">
+                                                                        @csrf
+                                                                        <input wire:model="file" type="file"
+                                                                            class="form-control">
+                                                                        <button class="btn btn-outline-secondary"
+                                                                            type="submit">Simpan</button>
+                                                                    </form>
+                                                                </div>
+                                                            </li>
+                                                        </ul> --}}
                                                         <ul class="navbar-nav">
                                                             <!-- Nav Item 3: Search Input and Button -->
                                                             <li class="nav-item">
@@ -259,7 +273,7 @@
                                                                 </th>
                                                                 <td scope="row">{{ $data->created_at }}</td>
                                                                 <td scope="row">{{ $data->nama }}</td>
-                                                                <td scope="row">{{ $data->kontak }}</td>
+                                                                <td scope="row">0{{ $data->kontak }}</td>
                                                                 <td scope="row">{{ $data->instansi }}</td>
                                                                 <td scope="row">{{ $data->tujuan }}</td>
                                                                 {{-- konfirmasi --}}

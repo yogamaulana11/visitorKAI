@@ -21,7 +21,7 @@
 
             <div class="dropdown me-4">
                 <button class="btn  rounded-pill text-black dropdown-toggle" data-bs-toggle="dropdown">
-                    Administrator
+                    {{ auth('admin-web')->user()->nipp }}
                     {{-- <img class="img-profile rounded-circle" src="{{ asset('assets/img/profiel.png') }}" height="20"> --}}
                 </button>
                 <ul class="dropdown-menu">

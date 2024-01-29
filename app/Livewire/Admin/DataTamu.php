@@ -4,11 +4,15 @@ namespace App\Livewire\Admin;
 
 use Carbon\Carbon;
 use Livewire\Component;
+use App\Imports\UserImport;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\Datatamu as TamuData;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DataTamu extends Component
 {
+    use WithFileUploads;
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -34,6 +38,7 @@ class DataTamu extends Component
     public $search;
     public $showform2;
     public $waktu_keluar;
+    public $file;
 
 
     public function render()
@@ -57,6 +62,24 @@ class DataTamu extends Component
         $datas = $data->paginate($this->take);
 
         return view('livewire.admin.data-tamu', compact('datas'));
+    }
+
+    public function upload()
+    {
+        $this->validate([
+			'file' => 'required|mimes:csv,xls,xlsx'
+		]);
+        // $f = $this->fil;
+		// menangkap file excel
+		// membuat nama file unik
+ 
+		// upload ke folder file_siswa di dalam folder public
+
+ 
+		// import data
+		Excel::import(new UserImport, $this->file);
+
+        // $this->dispatch('success', ['pesan' => 'Data berhasil diupload']);
     }
 
     public function waktuKeluar()

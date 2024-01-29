@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Admin;
 
+use Carbon\Carbon;
 use Livewire\Component;
+use App\Http\Controllers\Antrian;
 use App\Models\Datatamu as ModelsDatatamu;
 
 class AdminDashboard extends Component
@@ -28,6 +30,7 @@ class AdminDashboard extends Component
         $onDes = $this->onMonth(12);
         $labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
         $data = [$onJan, $onFeb, $onMar, $onApr, $onMei, $onJun, $onJul, $onAug, $onSep, $onOct, $onNov, $onDes];
+        $this->rataRata();
         return view('livewire.admin.admin-dashboard', compact('labels', 'data'));
     }
 
@@ -55,6 +58,27 @@ class AdminDashboard extends Component
         // @dd($count_data);
         return $count_data ?? 0;
     }
+
+    // rata-rata lama waktu bertamu (jam)
+    public function rataRata()
+    {
+        $datas = ModelsDatatamu::latest()->get();
+        $a = [];
+        foreach ($datas as $data)
+        {
+            $jam_datang = intval(Carbon::parse($data->jadwal_temu)->format('H'));
+            $jam_keluar = intval(Carbon::parse($data->waktu_keluar)->format('H'));
+            $lama = $jam_keluar - $jam_datang;
+            $a[] = $lama;
+        }
+        $counter = new Antrian($a);
+        $mostCommon = $counter->mostCommon(1);
+        return $mostCommon;
+        // $rata_rata = array_sum($a) / count($a);
+        // @dd($a);
+
+    }
+
 
     public function index()
     {

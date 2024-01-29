@@ -52,6 +52,19 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="col mt-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    Total
+                </div>
+                <div class="card-body">
+                    <div class="card-text">{{ $antrian }} jam</div>
+                </div>
+                <div class="card-footer">
+                    Rata Antrian
+                </div>
+            </div>
+        </div> --}}
     </div>
     {{-- end card --}}
 
