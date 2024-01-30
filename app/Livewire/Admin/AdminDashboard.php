@@ -16,20 +16,11 @@ class AdminDashboard extends Component
 
     public function render()
     {
-        $onJan = $this->onMonth(1);
-        $onFeb = $this->onMonth(2);
-        $onMar = $this->onMonth(3);
-        $onApr = $this->onMonth(4);
-        $onMei = $this->onMonth(5);
-        $onJun = $this->onMonth(6);
-        $onJul = $this->onMonth(7);
-        $onAug = $this->onMonth(8);
-        $onSep = $this->onMonth(9);
-        $onOct = $this->onMonth(10);
-        $onNov = $this->onMonth(11);
-        $onDes = $this->onMonth(12);
         $labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-        $data = [$onJan, $onFeb, $onMar, $onApr, $onMei, $onJun, $onJul, $onAug, $onSep, $onOct, $onNov, $onDes];
+        $data = [];
+        for ($i = 0; $i <= 12; $i++) {
+            $data[] = $this->onMonth($i);
+        }
         $this->rataRata();
         return view('livewire.admin.admin-dashboard', compact('labels', 'data'));
     }
@@ -64,8 +55,7 @@ class AdminDashboard extends Component
     {
         $datas = ModelsDatatamu::latest()->get();
         $a = [];
-        foreach ($datas as $data)
-        {
+        foreach ($datas as $data) {
             $jam_datang = intval(Carbon::parse($data->jadwal_temu)->format('H'));
             $jam_keluar = intval(Carbon::parse($data->waktu_keluar)->format('H'));
             $lama = $jam_keluar - $jam_datang;

@@ -14,6 +14,7 @@ use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
 use App\Livewire\Admin\ProfileSetting;
+use App\Livewire\Admin\UserKai;
 use App\Livewire\Admin\ViewData;
 use App\Livewire\Auth\Dashboard;
 
@@ -36,6 +37,7 @@ Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode'
 Route::prefix('admin')->group(function () {
     Route::middleware(['authAdmin'])->group(function () {
         Route::get('/', AdminDashboard::class);
+        Route::get('user-kai', UserKai::class);
         Route::get('datatamu', DataTamu::class);
         Route::get('reportdata', ReportData::class)->name('reportdata');
         Route::get('setting', ProfileSetting::class)->name('setting');

@@ -2,9 +2,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -40,38 +38,31 @@
             <div class="col-2 " style="background-color: #2D2A70;">
                 <div class="">
                     <div class="">
-                        <div
-                            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                            <a href="/"
-                                class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                             </a>
-                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                                id="menu">
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                                 <li class="nav-item">
-                                    <a href="#"
-                                        class="nav-link align-middle px-0 text-white text-decoration-none"></a>
+                                    <a href="#" class="nav-link align-middle px-0 text-white text-decoration-none"></a>
                                 </li>
                                 <li class="">
                                     @if (auth('admin-web')->user()->role == 'manajer')
-                                        <a href="{{ url('admin/') }}"
-                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                            <span class="d-none d-sm-inline">Dashboard</span>
-                                        </a>
+                                    <a href="{{ url('admin/') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                        <span class="d-none d-sm-inline">Dashboard</span>
+                                    </a>
                                     @endif
                                     @if (auth('admin-web')->user()->role == 'admin' || auth('admin-web')->user()->role == 'super-admin')
-                                        <a href="{{ url('admin/') }}"
-                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
-                                            <span class="d-none d-sm-inline">Dashboard</span>
-                                        </a>
-                                        <a href="{{ url('admin/datatamu') }}"
-                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
-                                            <span class="d-none d-sm-inline">Buku Tamu</span></a>
-                                        <a href="{{ url('/admin/reportdata') }}"
-                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
-                                            <span class="d-none d-sm-inline">Export</span></a>
-                                        <a href="{{ route('setting') }}"
-                                            class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
-                                            <span class="d-none d-sm-inline">Pengaturan</span></a>
+                                    <a href="{{ url('admin/') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-clipboard-data">
+                                        <span class="d-none d-sm-inline">Dashboard</span>
+                                    </a>
+                                    <a href="{{ url('admin/datatamu') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
+                                        <span class="d-none d-sm-inline">Buku Tamu</span></a>
+                                    <a href="{{ url('admin/user-kai') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-book">
+                                        <span class="d-none d-sm-inline">User KAI</span></a>
+                                    <a href="{{ url('/admin/reportdata') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-file-text">
+                                        <span class="d-none d-sm-inline">Export</span></a>
+                                    <a href="{{ route('setting') }}" class="nav-link px-0 align-middle text-white text-decoration-none bi bi-gear-fill">
+                                        <span class="d-none d-sm-inline">Pengaturan</span></a>
                                     @endif
                                 </li>
                             </ul>
@@ -115,7 +106,11 @@
 
             <script>
                 const ctx = document.getElementById('myChart');
-                var datas = {{ Js::from($data) }}
+                var datas = {
+                    {
+                        Js::from($data)
+                    }
+                }
                 new Chart(ctx, {
                     type: 'line',
                     data: {
