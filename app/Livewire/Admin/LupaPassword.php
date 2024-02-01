@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class LupaPassword extends Component
 {
     public $nipp;
+
     public $no_telp;
 
     public function render()
