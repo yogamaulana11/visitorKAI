@@ -14,6 +14,7 @@ use App\Livewire\Admin\Registrasi;
 use App\Livewire\Admin\LupaPassword;
 use App\Livewire\Admin\ReportData;
 use App\Livewire\Admin\ProfileSetting;
+use App\Livewire\Admin\ResetPassword;
 use App\Livewire\Admin\UserKai;
 use App\Livewire\Admin\ViewData;
 use App\Livewire\Auth\Dashboard;
@@ -33,6 +34,7 @@ Route::get('admin/login', AdminLogin::class)->name('adminlogin');
 Route::get('admin/registrasi', Registrasi::class)->name('registrasi');
 Route::get('admin/lupapassword', LupaPassword::class)->name('lupapassword');
 Route::get('admin/aturulangpassword', AturUlangPassword::class)->name('aturulangpassword');
+Route::get('admin/reset-password/{token}', ResetPassword::class);
 Route::get('admin/verifikasikode', VerifikasiKode::class)->name('verifikasikode');
 Route::prefix('admin')->group(function () {
     Route::middleware(['authAdmin'])->group(function () {

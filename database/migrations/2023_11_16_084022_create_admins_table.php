@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('nipp')->unique();
+            $table->string('email')->unique();
             $table->string('no_telp')->unique();
             $table->enum('role', ['super-admin', 'admin', 'manajer']);
             $table->string('password');

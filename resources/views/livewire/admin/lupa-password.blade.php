@@ -24,19 +24,19 @@
         <div class="container mt-5">
             <div class="mx-auto" style="width: 500px; height: 500px;">
                 <div class="container mx-3 border border-2 rounded-3 shadow-lg">
-                    <form wire:submit.prevent="clickSend">
+                    <form wire:submit.prevent="kirimLupaPassword">
                         @csrf
                         <div class="mb-2">
                             <h4 class="text-center mt-3">Lupa Kata Sandi</h4>
 
                         </div>
-                        <label class="form-label">No.Telp</label>
-                        <input wire:model="no_telp" name="no_telp" type="text" class="form-control" placeholder="Masukkan No.Telp Anda">
+                        <label class="form-label">Email</label>
+                        <input wire:model="email" name="no_telp" type="text" class="form-control" placeholder="Masukkan No.Telp Anda">
                         @error('no_telp')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                         <div>
-                            <div wire:click="clickSend" type="submit" class="btn text-light rounded-pill mt-3 " style="background-color: #ED6B23">Konfirmasi</div>
+                            <button type="submit" class="btn text-light rounded-pill mt-3 " style="background-color: #ED6B23">Kirim</button>
                         </div>
                         <p class="text-center mt-3">
                             <i class="bi bi-arrow-left-square"></i>
