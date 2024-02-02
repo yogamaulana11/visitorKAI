@@ -35,9 +35,9 @@
             <a class="navbar-brand ms-4" href="/">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="KAI" height="24">
             </a>
-            <div class="me-4">
+            {{-- <div class="me-4">
                 <a href="{{ route('registrasi') }}" class="btn text-dark rounded-pill">Registrasi</a>
-            </div>
+            </div> --}}
         </div>
     </nav>
     {{-- @if (session()->has('message'))

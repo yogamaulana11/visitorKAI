@@ -2,7 +2,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -31,12 +33,14 @@
 
                         </div>
                         <label class="form-label">Email</label>
-                        <input wire:model="email" name="no_telp" type="text" class="form-control" placeholder="Masukkan No.Telp Anda">
+                        <input wire:model="email" name="no_telp" type="text" class="form-control"
+                            placeholder="Masukkan email Anda">
                         @error('no_telp')
-                        <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                         <div>
-                            <button type="submit" class="btn text-light rounded-pill mt-3 " style="background-color: #ED6B23">Kirim</button>
+                            <button type="submit" class="btn text-light rounded-pill mt-3 "
+                                style="background-color: #ED6B23">Kirim</button>
                         </div>
                         <p class="text-center mt-3">
                             <i class="bi bi-arrow-left-square"></i>
@@ -48,7 +52,8 @@
             </div>
         </div>
         <footer class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid d-flex justify-content-between align-items-center" style="background-color: rgba(0, 0, 0, 0.05);">
+            <div class="container-fluid d-flex justify-content-between align-items-center"
+                style="background-color: rgba(0, 0, 0, 0.05);">
                 <div class="text-start">
                     © 2023 Visitor KAI:
                     <a class="text-reset text-decoration-none" href="#">PT.Kereta Api Indonesia (Persero) Divre
