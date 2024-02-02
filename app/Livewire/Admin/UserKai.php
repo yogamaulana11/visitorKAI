@@ -26,6 +26,12 @@ class UserKai extends Component
     public $role;
     public $create_user;
 
+    public function logout()
+    {
+        auth('admin-web')->logout();
+        redirect('admin/login');
+    }
+    
     public function render()
     {
         $admin = Admin::latest();
