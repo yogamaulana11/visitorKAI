@@ -78,6 +78,16 @@
             <div class="col-10">
                 <livewire:admin.components.dashboard />
                 {{-- cart --}}
+                {{-- <div class="row row-cols-sm-12 justify-content-center">
+                    <div class="col-6">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <div class="card-title">Statistik Circle Chart Pengunjung</div>
+                                <canvas id="myChart3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
                 <div class="row row-cols-sm-12">
                     <div class="col-6">
                         <div class="card mt-4">
@@ -106,15 +116,11 @@
 
             <script>
                 const ctx = document.getElementById('myChart');
-                var datas = {
-                    {
-                        Js::from($data)
-                    }
-                }
+                var datas = {{ Js::from($data) }};
                 new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli, Agustus', 'September',
+                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
                             'Oktober', 'November', 'Desember'
                         ],
                         datasets: [{
@@ -138,7 +144,7 @@
                 new Chart(ctx_a, {
                     type: 'bar',
                     data: {
-                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli, Agustus', 'September',
+                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
                             'Oktober', 'November', 'Desember'
                         ],
                         datasets: [{
@@ -162,7 +168,7 @@
                 new Chart(ctx_b, {
                     type: 'doughnut',
                     data: {
-                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli, Agustus', 'September',
+                        labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
                             'Oktober', 'November', 'Desember'
                         ],
                         datasets: [{
